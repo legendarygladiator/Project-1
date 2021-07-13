@@ -1,0 +1,365 @@
+{% extends 'base.html' %}
+{% block title %}training{% endblock title %}
+ {% block style %}
+<style>
+  .footer{
+      width: 100%;
+  }
+
+body{
+    background:linear-gradient(#4b9484,#1f77b4);
+     background-size: cover;
+}
+form {
+    width: 52%;
+    /* width: 100%; */
+    margin: auto;
+     border-radius:8px;
+     background:whitesmoke;
+
+
+  }
+.form2{
+     border-radius: 8px;
+     /* border: 2px solid black; */
+
+}
+
+.sec_1 {
+     border-radius:20px;
+    padding: 30px;
+    margin:auto;
+    line-height: 40px;
+    /* border: 2px solid black; */
+
+}
+
+.sec_1 #fname {
+    width: 80%;
+    padding: 8px;
+    opacity: 0.7;
+    background-color: whitesmoke;
+
+
+}
+
+#textarea_1 {
+    width: 80%;
+    padding: 9px;
+    opacity: 0.7;
+    background-color: whitesmoke;
+
+}
+
+.content_for_verification {
+    border: 1ps solid black;
+    padding: 30px;
+}
+
+#web_url {
+    width: 80%;
+    padding: 9px;
+    opacity: 0.7;
+    background-color: whitesmoke;
+
+}
+
+.social_media a {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+    color: black;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: white;
+    box-shadow: 2px 2px 2px whitesmoke;
+    width: 200px;
+    padding: 15px;
+    border: 1px solid black;
+    /* display: inline-block; */
+
+
+
+}
+
+.social_media a:hover {
+    color: rgb(18, 18, 202);
+}
+
+.social_media {
+    text-align: center;
+    padding: 20px;
+}
+
+.social_media i {
+    font-size: 25px;
+}
+
+#social_media_url {
+
+    width: 80%;
+    padding: 9px;
+    opacity: 0.7;
+    background-color: whitesmoke;
+
+}
+#myFile{
+   padding: 40px;
+   margin: 5px;
+    background-color:whitesmoke;
+   border: 2px dotted black;
+
+}
+#upload_btn{
+    width: 140px;
+    padding: 10px;
+    margin: 20px;
+    font-size: 18px;
+    background-color:brown;
+    cursor: pointer;
+}
+#upload_btn:hover{
+    color: whitesmoke;
+}
+#submit_next_btn{
+    width: 100px;
+    padding: 10px;
+    font-size: 20px;
+    background-color: #1f77b4;
+ }
+ #submit_next_btn:hover{
+     color: white;
+ }
+ @media screen and (max-width:760px){
+    form {
+    width: 100%;
+    margin: auto;
+     border-radius:8px;
+     background:whitesmoke;
+
+
+  }
+     
+ }
+
+</style>
+{% endblock style%}
+
+
+
+
+
+{% block body %}
+      
+    <form action="">
+        <h1 style="text-align: center; padding: 20px;">Organization details</h1>
+
+
+        <div>
+            <div class="sec_1">
+                <div>
+                    <label for="name">Name</label>
+                    <br>
+                    <input type="text" name="name" id="fname" required autocomplete="off" autofocus>
+                </div>
+                <div>
+                    <input type="checkbox" name="checkbox_1" id="input_for_checkbox1">
+                    <span> I am an independent practitioner (freelancer, architect, lawyer etc.) posting for self
+                    </span>
+                </div>
+
+                <div>
+                    <label for="textarea"> About yourself and what you do
+                    </label>
+                    <br>
+                    <textarea name="about_yourself" id="textarea_1" cols="30" rows="10" required autocomplete="off"
+                        autofocus></textarea>
+                </div>
+
+            </div>
+        </div>
+    </form>
+    <br>
+     <form action="" class="form2">
+        <div>
+            <div>
+                <h1 style="text-align: center; padding: 20px;">Account Verification
+                </h1>
+                 
+            </div>
+            <div class="content_for_verification">
+                <p style="opacity: 0.8;">Using any one of the options below, get your account verified and start posting internships/jobs
+                </p>
+                <br>
+                 
+                <div>
+                    <input type="checkbox" name="ckeckbox_for_web_url" id="ckeckbox1_account_verification"
+                        onclick="myWebsiteUrl()" ondblclick="hide_for_url.style.visibility='hidden'"><span> I have an
+                        active and functional website
+                    </span>
+                    <br>
+                    <br>
+                    <span style="opacity:.7;">Verify using your active & functional website
+                    </span>
+                    <div id="hide_for_url" style="display: none;">
+                        <p id="web_p"><strong> Enter website URL</strong></p>
+                        <input type="text" name="url" id="web_url" autofocus autocomplete="off" required
+                            placeholder="e.g  https://DeveloperSanjay.com">
+                    </div>
+                    <script>
+                        function myWebsiteUrl() {
+                            var x = document.getElementById('hide_for_url');
+                            if (x.style.display === 'none') {
+                                x.style.display = 'block';
+                            } else {
+                                x.style.display = 'none';
+                            }
+                        }
+                    </script>
+                </div>
+                <br>
+                <div class="checkbox_2_content">
+                    <div>
+                        <input type="checkbox" name="ckeckbox_for_social_media" id="ckeckbox2_account_verification"
+                            onclick="mySocialMediaAccessUrl()"><span> I don't have a website, but have active social
+                            media presence (YouTube, Instagram)
+                        </span>
+                        <br>
+                        <br>
+                        <span style="opacity:.7;">In case you do not have an active website, verify using social media
+                            page of which you are admin
+
+                        </span>
+                        </p>
+                    </div>
+                    <div id="hide_for_socialMedia" class="social_media_accessurl" style="display:none;">
+
+                        <p style="opacity:.7;">Connect your most active social media profile of which you are an admin
+                            with minimum 900-1100 likes/followers
+                            <br>
+
+                        <div class="social_media">
+                            <ul>
+                                <a href="#" onclick="instagram_url()"><i class="fa fa-instagram"
+                                        onclick="instagram_url()"></i>&nbsp;
+                                    Instagram </a>
+                                <a href="#" onclick="linkedin_url()"><i class="fa fa-linkedin" 
+                                    onclick="linkedin_url()"></i> &nbsp; 
+                                    LinkedIn </a>
+                                <a href="#"><i class="fa fa-youtube"></i>
+                                    &nbsp; YouTube </a>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <script>
+                        function mySocialMediaAccessUrl() {
+                            var s = document.getElementById('hide_for_socialMedia');
+                            if (s.style.display === 'none') {
+                                s.style.display = 'block';
+                            } else {
+                                s.style.display = 'none';
+                            }
+                        }
+                    </script>
+                    <script>
+                        function instagram_url() {
+                            var u = document.getElementById('hide_for_socialMedia_url');
+                            if (u.style.display === 'none') {
+                                u.style.display = 'block';
+                            } else {
+                                u.style.display = 'none';
+                            }
+                        }
+                    </script>
+
+                    <div id="hide_for_socialMedia_url" style="display: none;">
+
+                        <div>
+                            <p id="web_p"><strong> Enter Instagram username
+                                </strong></p>
+                            <input type="text" name="social_media" id="social_media_url" required autofocus
+                                autocomplete="off">
+                            <br>
+                            <br>
+                            <input type="checkbox" name="public_account" id="account_social_public"><span> My Instagram
+                                account is public </span>
+                        </div>
+                    </div>
+                    <div>
+                        <div id="hide_for_socialMedia_url2" style="display: none;">
+
+                            <div>
+                                <p id="web_p"><strong> Enter LinkedIn profile URL
+
+                                    </strong></p>
+                                <input type="text" name="social_media2" id="social_media_url" required autofocus
+                                    autocomplete="off" placeholder=" e.g https://www.linkedin.com/in/sanjay-kumar-b3baa71a0">
+                                
+                            </div>
+                        <script>
+                            function linkedin_url() {
+                                var linked = document.getElementById('hide_for_socialMedia_url2');
+                                if (linked.style.display === 'none') {
+                                    linked.style.display = 'block';
+                                } else {
+                                    linked.style.display = 'none';
+                                }
+                            }
+                        </script>
+                    </div>
+                </div>
+
+                <div>
+                    <br>
+                    <div class="checkbox_2_content">
+                        <div>
+                            <input type="checkbox" name="for_file" id="ckeckbox2_upload_file"
+                                onclick="uploaddocument()"><span> I don't have either of the above
+
+                            </span>
+                            <br>
+                            <br>
+                            <span style="opacity:.7;">Verify using any govt. issued document
+                            </span>
+                        
+                        </div>
+                </div>
+                <div>
+                    <div id="hide_for_file_upload" style="display:none;">
+
+                        <div>
+                            <p id="web_p"><strong>View the list of documents accepted by ____________(organisation name) here
+
+                                </strong></p>
+                                <input type="file" id="myFile" name="filename">
+                                <input type="submit" value="upload" id="upload_btn">
+                        </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        </div>
+        <br>
+        <br>
+        <input type="submit" value="Next" name="submit_btn" id="submit_next_btn">
+    </form>
+    </div>
+    </div>
+    <br><br><br>
+    {% block js%}
+    <script>
+      function uploaddocument() {
+          var upload = document.getElementById('hide_for_file_upload');
+          if (upload.style.display === 'none') {
+              upload.style.display = 'block';
+          } else {
+              upload.style.display = 'none';
+          }
+      }
+  </script>
+  {% endblock%}
+    
+    {% endblock body% }

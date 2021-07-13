@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    
+    <link rel="icon" href="/media/images/logo-img.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" type="text/css" href="/static/css/slick.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/slick-theme.css">
+    <title>{% block title%} {% endblock title %}</title>
+    {% block content%} {% endblock content %}
+    {% block style%} {% endblock style %}
+    <style>
+        .specific-training-section-1 {
+            background: url('https://images.unsplash.com/photo-1600456899121-68eda5705257?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+
+<body>
+
+    <header class="other-pages-header" id="top">
+        <div class="container fixed-top py-3">
+            <nav class="navbar navbar-light navbar-logo">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="\"><span class="fs-1 fa fa-pied-piper">project</span></a>
+                </div>
+            </nav>
+
+            <nav class="navbar navbar-expand-lg navbar-light float-end d-none d-lg-block">
+                <div class="container-fluid">
+                    <div class="collapse navbar-collapse other-pages-navbarNavDropdown" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                            <li class="nav-item mx-3">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Internships
+                                </a>
+                                <ul class="dropdown-menu mt-2" aria-labelledby="navbarDropdownMenuLink">
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <li>
+                                                <h5 class="ms-2">Location</h5>
+                                            </li>
+                                            <li><a class="dropdown-item" href="#">Work from home</a></li>
+                                            <li><a class="dropdown-item" href="#">Delhi</a></li>
+                                            <li><a class="dropdown-item" href="#">Gurugram</a></li>
+                                            <li><a class="dropdown-item" href="#">Chandigarh</a></li>
+                                            <li><a class="dropdown-item" href="#">Bangaluru</a></li>
+                                            <li><a class="dropdown-item" href="#">Chennai</a></li>
+                                            <li><a class="dropdown-item" href="#">Mumbai</a></li>
+                                            <li><a class="dropdown-item" href="#">Kolkata</a></li>
+                                            <li><a class="dropdown-item" href="#">International</a></li>
+                                        </div>
+                                        <div class="col-4">
+                                            <li>
+                                                <h5 class="ms-2">Profile</h5>
+                                            </li>
+                                            <li><a class="dropdown-item" href="#">Computer Science</a></li>
+                                            <li><a class="dropdown-item" href="#">Electronics</a></li>
+                                            <li><a class="dropdown-item" href="#">Mechanical</a></li>
+                                            <li><a class="dropdown-item" href="#">Civil</a></li>
+                                            <li><a class="dropdown-item" href="#">Marketing</a></li>
+                                            <li><a class="dropdown-item" href="#">Chemical</a></li>
+                                            <li><a class="dropdown-item" href="#">Finance</a></li>
+                                            <li><a class="dropdown-item" href="#">HR internships</a></li>
+                                            <li><a class="dropdown-item" href="#">Content Writing</a></li>
+                                        </div>
+                                        <div class="col-4">
+                                            <li>
+                                                <h5 class="ms-2">Category</h5>
+                                            </li>
+                                            <li><a class="dropdown-item" href="#">Engineering</a></li>
+                                            <li><a class="dropdown-item" href="#">MBA</a></li>
+                                            <li><a class="dropdown-item" href="#">Part-time</a></li>
+                                            <li><a class="dropdown-item" href="#">Graphic Design</a></li>
+                                            <li><a class="dropdown-item" href="#">Humanities</a></li>
+                                            <li><a class="dropdown-item" href="#">Science</a></li>
+                                            <li><a class="dropdown-item" href="#">Law</a></li>
+                                            <li><a class="dropdown-item" href="#">Architecture</a></li>
+                                            <li><a class="dropdown-item" href="#">Internship for women</a></li>
+                                        </div>
+                                        <hr class="mt-4" style="width:80%; margin:auto;">
+                                        <br>
+                                        <center>
+                                            <div class="mt-4">
+                                                <div class="links d-none d-lg-block">
+                                                    <a href="/training">View all internships <i
+                                                            class="fa fa-long-arrow-right"></i></a>
+                                                </div>
+                                            </div>
+                                        </center>
+                                    </div>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item mx-3">
+                                <a class="nav-link" aria-current="page" href="/main/fresherjobs">
+                                    Fresher Jobs
+                                </a>
+                            </li>
+
+                            {% if user.is_authenticated and user.is_employer %}
+                            <li class="nav-item mx-3">
+                                <a class="nav-link" aria-current="page" href="/main/">
+                                    Post Jobs
+                                </a>
+                            </li>
+                            {% endif %}
+
+                            <li class="nav-item mx-3">
+                                <a class="nav-link dropdown-toggle" href="/training" target="_blank"
+                                    id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    Online Trainings
+                                </a>
+                                <ul class="dropdown-menu w-100 mt-2" aria-labelledby="navbarDropdownMenuLink">
+                                    <div class="row ">
+                                        <div class="col-4">
+                                            <li>
+                                                <h5 class="ms-2">Programming</h5>
+                                            </li>
+                                            <li><a class="dropdown-item" href="/fresherjobs/">Python</a></li>
+                                            <li><a class="dropdown-item" href="#">Web Development</a></li>
+                                            <li><a class="dropdown-item" href="#">Ethical Hacking</a></li>
+                                            <li><a class="dropdown-item" href="#">C/C++</a></li>
+                                            <li><a class="dropdown-item" href="#">Android App</a></li>
+                                            <li><a class="dropdown-item" href="#">Java</a></li>
+                                            <li><a class="dropdown-item" href="#">React</a></li>
+                                            <li><a class="dropdown-item" href="#">Blockchain</a></li>
+                                            <li><a class="dropdown-item" href="#">Angular</a></li>
+                                            <li><a class="dropdown-item" href="#">Git and GitHub</a></li>
+                                            <li><a class="dropdown-item" href="#">SAS programming</a></li>
+                                        </div>
+                                        <div class="col-4">
+                                            <li>
+                                                <h5 class="ms-2">Business</h5>
+                                            </li>
+                                            <li><a class="dropdown-item" href="#">Marketing</a></li>
+                                            <li><a class="dropdown-item" href="#">Excel</a></li>
+                                            <li><a class="dropdown-item" href="#">Finance</a></li>
+                                            <li><a class="dropdown-item" href="#">Comm. Skills</a></li>
+                                            <li><a class="dropdown-item" href="#">Trading</a></li>
+                                            <li><a class="dropdown-item" href="#">Tally</a></li>
+                                            <li><a class="dropdown-item" href="#">HR</a></li>
+                                            <li><a class="dropdown-item" href="#">Startup</a></li>
+                                        </div>
+                                        <div class="col-4">
+                                            <li>
+                                                <h5 class="ms-2">Engineering</h5>
+                                            </li>
+                                            <li><a class="dropdown-item" href="#">AutoCAD</a></li>
+                                            <li><a class="dropdown-item" href="#">AutoCAD 3D</a></li>
+                                            <li><a class="dropdown-item" href="#">SOLIDWORKS</a></li>
+                                            <li><a class="dropdown-item" href="#">STAAD Pro</a></li>
+                                            <li><a class="dropdown-item" href="#">Fusion 360</a></li>
+                                            <li><a class="dropdown-item" href="#">IoT</a></li>
+                                            <li><a class="dropdown-item" href="#">Ansys</a></li>
+                                            <li><a class="dropdown-item" href="#">3D Printing</a></li>
+                                            <li><a class="dropdown-item" href="#">CATIA</a></li>
+                                            <li><a class="dropdown-item" href="#">PCB Design</a></li>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col-4">
+                                            <li>
+                                                <h5 class="ms-2">Data Science</h5>
+                                            </li>
+                                            <li><a class="dropdown-item" href="#">ML</a></li>
+                                            <li><a class="dropdown-item" href="#">Data Science</a></li>
+                                            <li><a class="dropdown-item" href="#">Tableau</a></li>
+                                            <li><a class="dropdown-item" href="#">Deep Learning</a></li>
+                                            <li><a class="dropdown-item" href="#">SAS programming</a></li>
+                                            <li><a class="dropdown-item" href="#">Statistics</a></li>
+                                            <li><a class="dropdown-item" href="#">Power Bi</a></li>
+                                        </div>
+                                        <div class="col-4">
+                                            <li>
+                                                <h5 class="ms-2">Design</h5>
+                                            </li>
+                                            <li><a class="dropdown-item" href="#">Graphic Design</a></li>
+                                            <li><a class="dropdown-item" href="#">UI/UX Design</a></li>
+                                            <li><a class="dropdown-item" href="#">Video Editing</a></li>
+                                            <li><a class="dropdown-item" href="#">Animation</a></li>
+                                            <li><a class="dropdown-item" href="#">WordPress</a></li>
+                                        </div>
+                                        <div class="col-4">
+                                            <li>
+                                                <h5 class="ms-2">Creative Arts</h5>
+                                            </li>
+                                            <li><a class="dropdown-item" href="#">Creative Writing</a></li>
+                                            <li><a class="dropdown-item" href="#">Guitar</a></li>
+                                            <li><a class="dropdown-item" href="#">Photography</a></li>
+                                            <li>
+                                                <h5 class="ms-2 mt-3">Language</h5>
+                                            </li>
+                                            <li><a class="dropdown-item" href="#">English</a></li>
+                                            <li><a class="dropdown-item" href="#">French</a></li>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="row">
+                                        <div class="col-4 mt-4">
+                                            <li>
+                                                <h5 class="ms-2">Career Development</h5>
+                                            </li>
+                                            <li><a class="dropdown-item" href="#">Business Skills</a></li>
+                                            <li><a class="dropdown-item" href="#">Internship Preparation</a></li>
+                                            <li><a class="dropdown-item" href="#">Job Preparation</a></li>
+                                            <li><a class="dropdown-item" href="#">Coding Interviews</a></li>
+                                        </div>
+                                        <div class="col-4 mt-4">
+                                            <li>
+                                                <h5 class="ms-2">Architecture</h5>
+                                            </li>
+                                            <li><a class="dropdown-item" href="#">AutoCAD</a></li>
+                                            <li><a class="dropdown-item" href="#">AutoCAD 3D</a></li>
+                                            <li><a class="dropdown-item" href="#">Revit</a></li>
+                                        </div>
+                                        <div class="col-4 mt-4">
+                                            <li>
+                                                <h5 class="ms-2">Specialisations</h5>
+                                            </li>
+                                            <li><a class="dropdown-item" href="#">Digital Marketing</a></li>
+                                            <li><a class="dropdown-item" href="#">Data Science</a></li>
+                                        </div>
+                                    </div> -->
+                                    <hr class="mt-2" style="width:80%; margin:auto;">
+
+                                    <center>
+                                        <div class="my-2">
+                                            <div class="links d-none d-lg-block">
+                                                <a href="/training" target="_blank">View trainings <i
+                                                        class="fa fa-long-arrow-right"></i></a>
+                                            </div>
+                                        </div>
+                                    </center>
+                                </ul>
+                            </li>
+                            {% if user.is_authenticated %}
+
+                            <li class="nav-item mx-3">
+                                <a class="nav-link dropdown-toggle" href="" target="_blank" id="navbarDropdownMenuLink"
+                                    role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <b>Welcome {{request.user}}!</b>
+                                </a>
+                                <ul class="dropdown-menu mt-2 fs-5 navbar-dropdown-register"
+                                    aria-labelledby="navbarDropdownMenuLink">
+                                    <li><a class="dropdown-item" href="/logout">logout</a></li>
+                                    
+                            </li>
+                                
+                            {% else %}
+                            <li class="nav-item mx-3 mt-2 links">
+                                <a class="mt-4" href="#" onclick="loginscreenon()">Log In</a>
+                            </li>
+
+                            <li class="nav-item mx-3">
+                                <a class="nav-link dropdown-toggle" href="" target="_blank" id="navbarDropdownMenuLink"
+                                    role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Register
+                                </a>
+                                <ul class="dropdown-menu mt-2 fs-5 navbar-dropdown-register"
+                                    aria-labelledby="navbarDropdownMenuLink">
+                                    <li><a class="dropdown-item" href="/signupR">As an employer</a></li>
+                                    <li><a class="dropdown-item" href="/signup">As a student</a></li>
+                                </ul>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="overlay-login theme-text-color fs-4" id="overlay-login">
+                <span class="login-overlay-close-btn fa fa-close theme-text-color float-end text-white fs-1"
+                    onclick="loginscreenoff()" title="Close Overlay"></span>
+                <div class="overlay-login-content">
+                    <div class="row text-center border-bottom mb-3 pb-5 links" style="height:40px;">
+                        <a href="#student-login" class="col-6 pt-1">Student login</a>
+                        <a href="#employer-login" class="col-6 pt-1">Employer login</a>
+                    </div>
+                    <div id="employer-login" class="page">
+                        <div class="registration-card mx-auto theme-text-color">
+                            <form action="/emplogin/" method="post">{%csrf_token%}
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Username
+                                        </label>
+                                    <input type="text" class="form-control bg-transparent text-white border-0"
+                                        id="exampleInputEmail1" name="empusername" aria-describedby="emailHelp"
+                                        placeholder="name@example.com">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                                    <input type="password" class="form-control bg-transparent text-white border-0"
+                                        id="exampleInputPassword1" name="emppassword" placeholder="Must be 8-20 characters">
+                                </div>
+                                <div class="mb-3 float-end">
+                                    <a href="#" style="text-decoration:none;">Forgot password?</a>
+                                </div>
+                                <br><br>
+                                <div class="mb-3 text-center">
+                                    <button type="submit" class="btn theme-bg px-3">Login</button>
+                                </div>
+                                <div class="mb-3 text-center">
+                                    <strong>New to project? <br> here </strong><a href=""
+                                        style="text-decoration:none;">Student</a>/<a href=""
+                                        style="text-decoration:none;">Company</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div id="student-login" class="page default theme-text-color">
+                        <div class="registration-card mx-auto ">
+                            <form action="/login/" method="post">{% csrf_token %}
+                                <div class="mb-3 text-center">
+                                    <button type="button" class="btn theme-bg fa fa-google-plus" name="button">
+                                        Sign up with google
+                                    </button>
+                                </div>
+
+                                <center>
+                                    <hr class="float-start mt-3" style="width:40%">
+                                    <span class="mx-auto text-center">OR</span>
+                                    <hr class="float-end mt-3" style="width:40%"><br>
+                                </center>
+
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Username
+                                        </label>
+                                    <input type="text" class="form-control bg-transparent text-white border-0"
+                                        id="exampleInputEmail1" name="loginusername" aria-describedby="emailHelp"
+                                        placeholder="name123">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                                    <input type="password" class="form-control bg-transparent text-white border-0"
+                                        id="exampleInputPassword1" name="loginpassword" placeholder="Must be 8-20 characters">
+                                </div>
+
+                                <div class="mb-3 float-end">
+                                    <a href="#" style="text-decoration:none;">Forgot password?</a>
+                                </div>
+
+                                <br><br>
+
+                                <div class="mb-3 text-center">
+                                    <button type="submit" class="btn theme-bg px-3">Login</button>
+                                </div>
+                                <div class="mb-3 text-center">
+                                    <strong>New to project? <br>Register here</strong>
+                                    <a href="/signup" style="text-decoration:none;">Student</a> /
+                                    <a href="/signupR" style="text-decoration:none;">
+                                        Company</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="fa fa-bars offcanvas-button float-end d-lg-none mt-2 p-2 fs-1 fw-bold border-0" type="button"
+                data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></button>
+
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                aria-labelledby="offcanvasRightLabel">
+                <div class="offcanvas-header bg-light">
+                    <h5 id="offcanvasRightLabel">
+                        <a class="navbar-brand fs-1 text-dark fa fa-pied-piper" href="\">project</a>
+                    </h5>
+                    <button type="button" class="fa fa-times offcanvas-close-btn-other-pages text-reset"
+                        data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body bg-light">
+                    <div class="navbar-nav fs-4 links">
+                        <a class="nav-link ps-3 fs-3" href="/training"> Internships</a>
+                        <a class="nav-link ps-3 fs-3" data-bs-toggle="collapse" href="#collapseExample" role="button"
+                            aria-expanded="false" aria-controls="collapseExample">
+                            Online Trainings
+                            <i class="fa fa-angle-down float-end me-1"></i>
+                        </a>
+                        <div class="collapse offcanvas-collapse-menu-1" id="collapseExample">
+                            <ul class="lists">
+                                <li>
+                                    <a class="btn text-start w-100 fs-4" data-bs-toggle="collapse"
+                                        href="#collapseProgramming" role="button" aria-expanded="false"
+                                        aria-controls="collapseProgramming">
+                                        Programming
+                                        <i class="fa fa-angle-down float-end mt-2 me-1"></i>
+                                    </a>
+
+                                    <div class="collapse" id="collapseProgramming">
+                                        <ul>
+                                            <li><a class="dropdown-item" href="#">Python</a></li>
+                                            <li><a class="dropdown-item" href="#">Web Development</a></li>
+                                            <li><a class="dropdown-item" href="#">Ethical Hacking</a></li>
+                                            <li><a class="dropdown-item" href="#">C/C++</a></li>
+                                            <li><a class="dropdown-item" href="#">Android App</a></li>
+                                            <li><a class="dropdown-item" href="#">Java</a></li>
+                                            <li><a class="dropdown-item" href="#">React</a></li>
+                                            <li><a class="dropdown-item" href="#">Blockchain</a></li>
+                                            <li><a class="dropdown-item" href="#">Angular</a></li>
+                                            <li><a class="dropdown-item" href="#">Git and GitHub</a></li>
+                                            <li><a class="dropdown-item" href="#">SAS programming</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <a class="btn text-start w-100 fs-4" data-bs-toggle="collapse"
+                                        href="#collapseDataScience" role="button" aria-expanded="false"
+                                        aria-controls="collapseDataScience">
+                                        Data Science
+                                        <i class="fa fa-angle-down float-end mt-2 me-1"></i>
+                                    </a>
+
+                                    <div class="collapse" id="collapseDataScience">
+                                        <ul>
+                                            <li><a class="dropdown-item" href="#">ML</a></li>
+                                            <li><a class="dropdown-item" href="#">Data Science</a></li>
+                                            <li><a class="dropdown-item" href="#">Tableau</a></li>
+                                            <li><a class="dropdown-item" href="#">Deep Learning</a></li>
+                                            <li><a class="dropdown-item" href="#">SAS programming</a></li>
+                                            <li><a class="dropdown-item" href="#">Statistics</a></li>
+                                            <li><a class="dropdown-item" href="#">Power Bi</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <a class="btn text-start w-100 fs-4" data-bs-toggle="collapse"
+                                        href="#collapseDesign" role="button" aria-expanded="false"
+                                        aria-controls="collapseDesign">
+                                        Design
+                                        <i class="fa fa-angle-down float-end mt-2 me-1"></i>
+                                    </a>
+
+                                    <div class="collapse" id="collapseDesign">
+                                        <ul>
+                                            <li><a class="dropdown-item" href="#">Graphic Design</a></li>
+                                            <li><a class="dropdown-item" href="#">UI/UX Design</a></li>
+                                            <li><a class="dropdown-item" href="#">Video Editing</a></li>
+                                            <li><a class="dropdown-item" href="#">Animation</a></li>
+                                            <li><a class="dropdown-item" href="#">WordPress</a></li>
+                                        </ul>
+                                    </div>
+
+                                </li>
+
+                                <li>
+                                    <a class="btn text-start w-100 fs-4" data-bs-toggle="collapse"
+                                        href="#collapseBusinessManagement" role="button" aria-expanded="false"
+                                        aria-controls="collapseBusinessManagement">
+                                        Business Management
+                                        <i class="fa fa-angle-down float-end mt-2 me-1"></i>
+                                    </a>
+
+                                    <div class="collapse" id="collapseBusinessManagement">
+                                        <ul>
+                                            <li><a class="dropdown-item" href="#">Marketing</a></li>
+                                            <li><a class="dropdown-item" href="#">Excel</a></li>
+                                            <li><a class="dropdown-item" href="#">Finance</a></li>
+                                            <li><a class="dropdown-item" href="#">Comm. Skills</a></li>
+                                            <li><a class="dropdown-item" href="#">Trading</a></li>
+                                            <li><a class="dropdown-item" href="#">Tally</a></li>
+                                            <li><a class="dropdown-item" href="#">HR</a></li>
+                                            <li><a class="dropdown-item" href="#">Startup</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <a class="btn text-start w-100 fs-4" data-bs-toggle="collapse"
+                                        href="#collapseEngineering" role="button" aria-expanded="false"
+                                        aria-controls="collapseEngineering">
+                                        Engineering
+                                        <i class="fa fa-angle-down float-end mt-2 me-1"></i>
+                                    </a>
+
+                                    <div class="collapse" id="collapseEngineering">
+                                        <ul>
+                                            <li><a class="dropdown-item" href="#">AutoCAD</a></li>
+                                            <li><a class="dropdown-item" href="#">AutoCAD 3D</a></li>
+                                            <li><a class="dropdown-item" href="#">SOLIDWORKS</a></li>
+                                            <li><a class="dropdown-item" href="#">STAAD Pro</a></li>
+                                            <li><a class="dropdown-item" href="#">Fusion 360</a></li>
+                                            <li><a class="dropdown-item" href="#">IoT</a></li>
+                                            <li><a class="dropdown-item" href="#">Ansys</a></li>
+                                            <li><a class="dropdown-item" href="#">3D Printing</a></li>
+                                            <li><a class="dropdown-item" href="#">CATIA</a></li>
+                                            <li><a class="dropdown-item" href="#">PCB Design</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <a class="btn text-start w-100 fs-4" data-bs-toggle="collapse"
+                                        href="#collapseCreativeArts" role="button" aria-expanded="false"
+                                        aria-controls="collapseCreativeArts">
+                                        Creative Arts
+                                        <i class="fa fa-angle-down float-end mt-2 me-1"></i>
+                                    </a>
+
+                                    <div class="collapse" id="collapseCreativeArts">
+                                        <ul>
+                                            <li><a class="dropdown-item" href="#">Creative Writing</a></li>
+                                            <li><a class="dropdown-item" href="#">Guitar</a></li>
+                                            <li><a class="dropdown-item" href="#">Photography</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <a class="btn text-start w-100 fs-4" data-bs-toggle="collapse"
+                                        href="#collapseLanguage" role="button" aria-expanded="false"
+                                        aria-controls="collapseLanguage">
+                                        Language
+                                        <i class="fa fa-angle-down float-end mt-2 me-1"></i>
+                                    </a>
+
+                                    <div class="collapse" id="collapseLanguage">
+                                        <ul>
+                                            <li><a class="dropdown-item" href="#">English</a></li>
+                                            <li><a class="dropdown-item" href="#">French</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <a class="btn text-start w-100 fs-4" data-bs-toggle="collapse"
+                                        href="#collapseCareerDevelopment" role="button" aria-expanded="false"
+                                        aria-controls="collapseCareerDevelopment">
+                                        Career Development
+                                        <i class="fa fa-angle-down float-end mt-2 me-1"></i>
+                                    </a>
+
+                                    <div class="collapse" id="collapseCareerDevelopment">
+                                        <ul>
+                                            <li><a class="dropdown-item" href="#">Business Skills</a></li>
+                                            <li><a class="dropdown-item" href="#">Internship Preparation</a></li>
+                                            <li><a class="dropdown-item" href="#">Job Preparation</a></li>
+                                            <li><a class="dropdown-item" href="#">Coding Interviews</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <a class="btn text-start w-100 fs-4" data-bs-toggle="collapse"
+                                        href="#collapseArchitecture" role="button" aria-expanded="false"
+                                        aria-controls="collapseArchitecture">
+                                        Architecture
+                                        <i class="fa fa-angle-down float-end mt-2 me-1"></i>
+                                    </a>
+
+                                    <div class="collapse" id="collapseArchitecture">
+                                        <ul>
+                                            <li><a class="dropdown-item" href="#">AutoCAD</a></li>
+                                            <li><a class="dropdown-item" href="#">AutoCAD 3D</a></li>
+                                            <li><a class="dropdown-item" href="#">Revit</a></li>
+                                        </ul>
+                                    </div>
+
+                                </li>
+
+                                <li>
+                                    <a class="btn text-start w-100 fs-4" data-bs-toggle="collapse"
+                                        href="#collapseSpecialisations" role="button" aria-expanded="false"
+                                        aria-controls="collapseSpecialisations">
+                                        Specialisations
+                                        <i class="fa fa-angle-down float-end mt-2 me-1"></i>
+                                    </a>
+
+                                    <div class="collapse" id="collapseSpecialisations">
+                                        <ul>
+                                            <li><a class="dropdown-item" href="#">Digital Marketing</a></li>
+                                            <li><a class="dropdown-item" href="#">Data Science</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+
+                                <li class="pt-2 fs-5 links">
+                                    <a href="/training" target="_blank">View Trainings</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <a class="nav-link ps-3 fs-3" href="#"> WFH Internships</a>
+                        <a class="nav-link ps-3 fs-3" href="//main/fresherjobs"> Fresher Jobs</a>
+                        <a class="nav-link ps-3 fs-3" href="/contact"> Contact Us</a>
+                        <hr class="offcanvas-hr">
+                        <a class="nav-link ps-3 fs-5" href="/signup"> Register - As a
+                            Student</a>
+                        <a class="nav-link ps-3 fs-5" href="/signupR"> Register - As an
+                            Employer</a>
+                        <a class="nav-link ps-3 fs-5 text-reset" href="#" onclick="loginscreenon()"
+                            data-bs-dismiss="offcanvas">Log In</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+    <strong>message- </strong> {{message}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+    {% endfor %}
+    {% endif %}
+
+     {% block body %} {% endblock body %}
+  {% block js %} {% endblock %}
+
+
+    <footer>
+        <div class="container py-5 theme-text-color">
+            <div class="row footer-important-links">
+                <div class="container-fluid brand-name fs-3 col-md-4 col-12 text-center text-md-start mb-5">
+                    <a class="navbar-brand fs-1 fa fa-pied-piper" href="index.html">project</a>
+                </div>
+                <div class="footer-content col-md-7 col-12 text-center text-md-start">
+                    <div class="row">
+                        <div class="col-4">
+                            <ul class="lists links">
+                                <li class="fw-bold mb-3">SERVICES</li>
+                                <li class="my-2"><a href="trainings.html" target="_blank">Trainings</a></li>
+                                <li class="my-2"><a href="internships.html">Internships</a></li>
+                                <li class="my-2"><a href="">Post Jobs</a></li>
+                                <li class="my-2"><a href="#">Hire Interns</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-4">
+                            <ul class="lists links">
+                                <li class="fw-bold mb-3">WORK FOR US</li>
+                                <li class="my-2"><a href="#">We're hiring</a></li>
+                                <li class="my-2"><a href="#" onclick="loginscreenon()">Log In</a></li>
+                                <li class="my-2"><a href="#">Sign Up</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-4">
+                            <ul class="lists links">
+                                <li class="fw-bold mb-3">ABOUT US</li>
+                                <li class="my-2"><a href="index.html">project</a></li>
+                                <li class="my-2"><a href="">Blogs</a></li>
+                                <li class="my-2"><a href="/contact">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container social border-bottom pb-5 text-center links fs-2 my-4 my-md-5">
+                <a href="" class="fa fa-facebook mx-3"></a>
+                <a href="" class="fa fa-twitter mx-3"></a>
+                <a href="" class="fa fa-pinterest mx-3"></a>
+                <a href="" class="fa fa-youtube mx-3"></a>
+            </div>
+            <div class="container footer-secondary-links">
+                <div class="row">
+                    <div class="links col-5">
+                        <a href="" class="">Privacy Policy</a> |
+                        <a href="" class="">Cookie Policy</a>
+                    </div>
+                    <div class="text-center col-2 links">
+                        <a href="#top" class="fa fa-arrow-up"></a>
+                    </div>
+                    <div class="text-end col-5 links">
+                        <a href="index.html" class="fa fa-copyright">project</a> | by Team 3
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="/static/js/slick.min.js"></script>
+    <script src="/static/js/script.js"></script>
+
+</body>
+
+</html>

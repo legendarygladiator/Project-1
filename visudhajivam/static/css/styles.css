@@ -1,0 +1,572 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+ }
+ ::selection {
+     color:rgba(0,0,0,0.5);
+     background: blanchedalmond;
+ }
+ .links a{
+     text-decoration: none;
+     color: inherit;
+ }
+ .links a:hover{
+     color: inherit;
+     text-decoration: none;
+ }
+ .lists li{
+     list-style: none;
+ }
+ .theme-text-color, .theme-text-color a{
+     color: blanchedalmond !important;
+ }
+ .theme-bg{
+     background-color: blanchedalmond !important;
+ }
+ .theme-text-color-gold, .theme-text-color-gold a{
+     color: gold !important;
+ }
+ 
+ /* HEADER STARTS */
+ .navbar-logo{
+     float: left;
+ }
+ .offcanvas-button{
+     background: none;
+ }
+ .offcanvas-close-btn{
+     color: blanchedalmond !important;
+     font-size: 60px;
+     border: none;
+     background-color: transparent;
+ }
+ 
+ .page, :target ~ .default {
+     display: none;
+ }
+ .default, :target {
+     display: block;
+ }
+   
+ #overlay-login {
+     position: fixed;
+     display: none;
+     width: 100%;
+     height: 100%;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     background-color: rgba(0,0,0,0.8);
+     z-index: 10;
+     cursor: pointer;
+ }
+   
+ .overlay-login-content{
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     width: 50%;
+     transform: translate(-50%,-50%);
+     -ms-transform: translate(-50%,-50%);
+ }
+ .overlay-login:hover{
+     cursor: default !important;
+ }
+ .login-overlay-close-btn{
+     position: absolute;
+     top: 8%;
+     right: 12%;
+     cursor: pointer;
+ }
+ 
+ .navbar-dropdown-register{
+     margin-left: 80%;
+ }
+ .index-navbarNavDropdown ul li ul{
+     background:black;
+ }
+ #navbarNavDropdown ul li ul a:hover{
+     background-color: rgba(255,255,255,0.3);
+ }
+ /* HEADER ENDS */
+ 
+ /* MAIN STARTS */
+ .section-1{
+     background-image: url('/media/images/banner-1.jpg');
+     background-repeat: no-repeat;
+     background-size: 100% 100%;
+     height: 750px;
+ }
+ .section-1-foreground .row{
+     justify-content: space-around;
+ }
+ .landing-slick-carousel{
+     position: relative;
+     top: 200px;
+ }
+ .landing-slick-carousel img{
+     width: 500px;
+     height: 350px;
+     border-radius: 10px;
+     margin: auto;
+ }
+ .section-1-foreground-text{
+     text-align: center;
+     margin: auto 0 ;
+     margin-top: 300px;
+ }
+ 
+ .search-area{
+     background: black;
+     height: 400px;
+     padding-top: 140px ;
+ }
+ .search-box{
+     text-align: center;
+ }
+ .search-area-box{
+     height: 40px;
+     width: 60% !important;
+   }
+ .search-icon{
+     width: 8%;
+     height: 40px;
+     font-size:20px !important;
+ }
+ .overlay-search-box {
+     height: 90%;
+     width: 100%;
+     display: none;
+     position: fixed;
+     top: 0;
+     left: 0;
+     z-index: 1;
+     background-color: black;
+ }
+ .overlay-content {
+     position: relative;
+     top: 30%;
+     width: 70%;
+     text-align: center;
+     margin: auto;
+ } 
+ .overlay-subcontent{
+     margin-top: 50px;
+     float: left;
+ }
+ .overlay-subcontent-heading{
+     float:left;
+ }
+ .overlay-subcontent-content{
+     margin-top: 10px;
+ }
+ .overlay-subcontent-content a{
+     margin-right: 15px;
+     margin-top: 50px !important;
+ }
+ .overlay-subcontent-content a:hover{
+     color: gray;
+     text-decoration: underline;
+ } 
+ .overlay-search-box .closebtn {
+     position: absolute;
+     top: 15%;
+     right: 10%;
+     font-size: 50px;
+     cursor: pointer;
+ } 
+ .overlay-search-box input[type=text] {
+     padding: 15px;
+     font-size: 17px;
+     border: 1px solid black;
+     float: left;
+     width: 80%;
+ } 
+ .overlay-search-box button {
+     float: left;
+     width: 10%;
+     padding: 15px;
+     font-size: 17px;
+ }
+ 
+ .index-internship-card{
+     height: 250px;
+     margin: 0 15px;
+     margin-bottom: 35px;
+     background-size: cover;
+     background-repeat: no-repeat;
+     cursor: pointer;
+ }
+ .index-internship-card-caption{
+     position: relative;
+     top: 102.5%;
+     padding: 10px;
+     text-align: center;
+     color:blanchedalmond;
+     background: rgba(0,0,0,0.6);
+ }
+ .index-internship-card-wfh{
+     background-image: url('/media/images/index-internship-card-wfh.jpg');
+ }
+ .index-internship-card-gurugram{
+     background-image: url('/media/images/index-internship-card-gurugram.jpg');
+ }
+ .index-internship-card-mumbai{
+     background-image: url('/media/images/index-internship-card-mumbai.jpg');
+ }
+ .index-internship-card-kolkata{
+     background-image: url('/media/images/index-internship-card-kolkata.jpg');
+ }
+ .index-internship-card-chennai{
+     background-image: url('/media/images/index-internship-card-chennai.jpg');
+ }
+ .index-internship-card-delhi{
+     background-image: url('/media/images/index-internship-card-delhi.jpg');
+ }
+ .index-internship-card-bangalore{
+     background-image: url('/media/images/index-internship-card-bangalore.jpg');
+ }
+ .index-internship-card-hyderabad{
+     background-image: url('/media/images/index-internship-card-hyderabad.jpg');
+ }
+ 
+ .index-internship-card-part-time{
+     background-image: url('/media/images/index-internship-card-part-time.jpg');
+ }
+ .index-internship-card-engineering{
+     background-image: url('/media/images/index-internship-card-engineering.jpg');
+ }
+ .index-internship-card-ngo{
+     background-image: url('/media/images/index-internship-card-ngo.jpg');
+ }
+ .index-internship-card-design{
+     background-image: url('/media/images/index-internship-card-design.jpg');
+ }
+ .index-internship-card-mba{
+     background-image: url('/media/images/index-internship-card-mba.jpg');
+ }
+ .index-internship-card-science{
+     background-image: url('/media/images/index-internship-card-science.jpg');
+ }
+ .index-internship-card-media{
+     background-image: url('/media/images/index-internship-card-media.jpg');
+ }
+ 
+ .index-trainings-section{
+     background: url('/media/images/gray-background.jpg');
+     background-size: cover;
+     background-repeat: no-repeat;
+ }
+ 
+ .index-fresher-jobs-section img{
+     width: 100%;
+     height: 100%;
+ }
+ /* MAIN ENDS */
+ 
+ /* FOOTER STARTS */
+ footer{
+     background: black;
+ }
+ .footer-important-links, .footer-secondary-links{
+     justify-content: space-between;
+ }
+ /* FOOTER ENDS */
+ 
+ /* RESPONSIBLE AREA */
+ @media (min-width:1200px) {
+     .index-trainings-section .index-trainings-card {
+         height: 220px;
+     }
+ }
+ @media (max-width:992px) and (min-width:768px) {
+     /* HEADER STARTS */
+     /* HEADER ENDS */
+ 
+     /* MAIN STARTS */
+     .section-1{
+         height: 950px;
+     }
+     .landing-slick-carousel img{
+         width: 600px;
+         height: 450px;
+     }
+ 
+     .index-internship-card{
+         margin: 0 30px;
+         margin-bottom: 35px;
+     }
+     /* MAIN ENDS */
+ 
+     /* FOOTER STARTS */
+     /* FOOTER ENDS */
+ }
+ @media (max-width:768px) and (min-width:576px) {
+         /* HEADER STARTS */
+     /* HEADER ENDS */
+ 
+     /* MAIN STARTS */
+     .section-1{
+         height: 850px;
+     }
+     .landing-slick-carousel img{
+         width: 500px;
+         height: 350px;
+ 
+     }
+     .search-box-heading{
+         font-size: 1.7em !important;
+     }
+ 
+     .index-internship-card{
+         margin: 0 15px;
+         margin-bottom: 35px;
+     }
+     /* MAIN ENDS */
+ 
+     /* FOOTER STARTS */
+     /* FOOTER ENDS */
+     
+ }
+ @media (max-width:576px) {
+     /* HEADER STARTS */
+     .overlay-login-content{
+         width: 90%;
+     }
+     /* HEADER ENDS */
+ 
+     /* MAIN STARTS */
+     .landing-slick-carousel img{
+         width: 450px;
+         height: 300px;
+         margin:auto;
+     }
+     .overlay-subcontent-content a{
+         font-size: 14px;
+     }
+     
+     .overlay-search-box input[type=text] {
+         padding: 10px;
+         font-size: 12px;
+         width: 80%;
+         border-radius: 4px
+     }
+     
+     .overlay-search-box button {
+         width: 20%;
+         padding: 10px;
+         font-size: 12px;
+     }
+ 
+     .search-box-heading{
+         font-size: 1.35em !important;
+     }
+ 
+     .index-internship-card{
+         margin-bottom: 35px;
+     }
+     /* MAIN ENDS */
+ 
+     /* FOOTER STARTS */
+     /* FOOTER ENDS */
+ 
+ }
+ 
+ /* CONTACT US PAGE */
+ 
+ /* HEADER STARTS*/
+ .other-pages-header{
+     background-color: whitesmoke;
+     height: 113.5px;
+ }
+ .other-pages-header .fixed-top{
+     background-color: whitesmoke;
+ }
+ .other-pages-navbarNavDropdown ul li ul{
+     background:whitesmoke;
+ }
+ .other-pages-navbarNavDropdown ul li ul a:hover{
+     background-color: rgba(0, 0, 0, 0.1) !important;
+ }
+ /* HEADER ENDS */
+ 
+ /* BODY STARTS */
+ iframe{
+     width: 100%;
+     height: 30vw;
+     border-radius: 10px;
+ }
+ 
+ /* BODY ENDS */
+ 
+ /* FOOTER STARTS */
+ /* FOOTER ENDS */
+ 
+ /* CONTACT US PAGE ENDS */
+ 
+ /* TRAININGS PAGE */
+ /* HEAD */
+ .offcanvas-close-btn-other-pages{
+     font-size: 60px;
+     border: none;
+     background-color: transparent;
+ }
+ /* HEAD ENDS */
+ /* MAIN */
+ .trainings-banner{
+     background:url('/media/images/gray-background-2.jpg');
+     height: 50vw;
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position-y: bottom;
+     font-size: 6vw;
+ }
+ 
+ :root {
+     --surface-color: whitesmoke;
+     --curve: 10;
+ }
+ 
+ .trainings-cards div {
+     text-align: center;
+     /* margin: 0 25px; */
+     margin-right: 30px;
+     margin-left: 15px;
+ }
+ 
+ .card {
+     position: relative;
+     display: block;
+     height: 100%;
+     border-radius: calc(var(--curve) * 1px);
+     border: none;
+     overflow: hidden;
+     text-decoration: none;
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+     margin: 25px 0;
+ }
+ 
+ .trainings-card-image {
+     width: 100%;
+     height: 360px;
+ }
+ 
+ .trainings-card-overlay {
+     position: absolute;
+     width: 100%;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     z-index: 1;
+     border-radius: calc(var(--curve) * 1px);
+     background-color: var(--surface-color);
+     transform: translateY(100%);
+     transition: .6s ease-in-out;
+ }
+ 
+ .card:hover .trainings-card-overlay {
+     transform: translateY(0);
+ }
+ 
+ .trainings-card-header {
+     position: relative;
+     display: flex;
+     align-items: center;
+     gap: 2em;
+     padding: 2em;
+     border-radius: calc(var(--curve) * 1px) 0 0 0;
+     transform: translateY(-100%);
+     transition: .5s ease-in-out;
+     background-color: var(--surface-color);
+     width: 100%;
+ }
+ 
+ .trainings-card-arc {
+     width: 80px;
+     height: 80px;
+     position: absolute;
+     bottom: 100%;
+     right: 0;
+     z-index: 1;
+ }
+ 
+ .trainings-card-arc path {
+     fill: var(--surface-color);
+ }
+ 
+ .trainings-card-title {
+     font-size: 1.3em;
+     margin: 0 0 .3em;
+     color: black;
+ }
+ 
+ .card:hover .trainings-card-header {
+     transform: translateY(0);
+ }
+ 
+ .trainings-card-description {
+     padding: 0 2em 2em;
+     margin: 0;
+     color: black;
+     display: -webkit-box;
+     -webkit-box-orient: vertical;
+     -webkit-line-clamp: 3;
+     overflow: hidden;
+ }
+ 
+ /* MAIN ENDS */
+ /* FOOTER */
+ /* FOOTER ENDS */
+ /* RESPONSIBLE AREA */
+ .trainings-card-image {
+     width: 100%;
+     height: 360px;    
+ }
+ @media (max-width:576px) {
+     .trainings-banner{
+         height: 100vw;
+         font-size: 10vw;
+     }
+ 
+     .trainings-card-image {
+         width: 100%;
+     }
+ }
+ @media (max-width:768px) and (min-width:576px) {
+     .trainings-banner{
+         height: 75vw;
+         font-size: 8vw;
+     }
+ 
+     .trainings-card-image {
+         width: 100%;
+         height: 435px;
+     }
+ }
+ @media (max-width:992px) and (min-width:768px) {
+     .trainings-banner{
+         height: 65vw;
+         font-size: 7vw;
+     }
+ 
+     .trainings-card-image {
+         width: 100%;
+         height: 285px;
+     }
+ }
+ @media (max-width:1200px) and (min-width:992px) {
+     .trainings-card-image {
+         width: 100%;
+         height: 260px;
+     }
+ }
+ @media (min-width:1200px) {
+     .trainings-card-image {
+         width: 100%;
+         height: 360px;
+     }
+ }
+ 
+ /* TRAININGS PAGE ENDS */

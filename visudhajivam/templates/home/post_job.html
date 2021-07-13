@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>InternoShala</title>
+  <link rel="icon" href="images/logo-img.png" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+
+   
+  <style>
+      .footer{
+          width: 100%;
+      }
+      body {
+            background: url("images/image1.png");
+             background-size: contain;
+
+        }
+
+        .main-div {
+            width: 60%;
+            margin: auto;
+            background-color: white;
+            /* background-color: teal; */
+
+            border: 1px solid pink;
+            box-shadow: 2px 2px 3px black;
+            color: black;
+            font-size: 16px;
+
+            /* padding: 10px; */
+        }
+
+        .under-main {
+            /* border: 1px solid black; */
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px;
+
+
+        }
+
+
+
+        .header-heading {
+            text-align: center;
+        }
+
+        .profile_radio_container {
+
+            margin: 20px;
+        }
+
+        .radio {
+            margin: 10px;
+
+        }
+
+        .input-android-dev {
+            padding: 10px;
+            margin: 10px;
+        }
+
+        .input-android-dev input {
+            padding: 10px;
+            width: 90%;
+        }
+
+        .belongs-marketing {
+            margin: 10px;
+        }
+
+        .checkbox-marketing {
+            margin: 12px;
+
+        }
+
+        .radiobtn-marketing {
+            margin-left: -10px;
+        }
+
+        #location {
+            padding: 8px;
+            width: 90%;
+            margin-top: 10px;
+        }
+
+        .internship-date-label {
+            line-height: 30px;
+        }
+
+        .no-of-opening input {
+            width: 90%;
+            padding: 8px;
+
+        }
+
+        .no-of-opening {
+            line-height: 35px;
+        }
+
+        .intern-date-picker {
+            padding: 8px;
+            margin: 10px;
+            margin-left: 10px;
+            width: 30%;
+        }
+
+        #start_date_2 {
+            margin-left: 27px;
+
+
+        }
+
+        .chosen-select {
+            width: 30%;
+            padding: 8px;
+            margin: 10px;
+        }
+
+        .stipend-radio-btn {
+            display: inline-block;
+            margin: 20px;
+        }
+
+        .stipend-content {
+            display: inline-block;
+            margin: 5px;
+        }
+
+        .stipend-chosen-select {
+            padding: 8px;
+            width: 120px;
+        }
+
+        .perks-checkbox {
+            float: left;
+
+        }
+
+        .perks-checkbox-data {
+            margin: 10px;
+        }
+
+        .perks-question {
+            margin: 10px;
+
+        }
+        .heading-perks{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .add-another-question button {
+            padding: 5px;
+            color: black;
+            background-color: white;
+            outline: none;
+            border: none;
+            color: black;
+            cursor: pointer;
+        }
+
+        .btn-submit {
+            padding: 10px;
+            float: right;
+            margin: 20px;
+        }
+
+        .btn-submit button {
+            padding: 7px;
+            width: 140px;
+            background-color: white;
+            /* background-color: blue; */
+
+        }
+
+        #btn-1:hover {
+            background-color: brown;
+            color: white;
+        }
+
+        #btn-2:hover {
+            background-color: brown;
+            color: white;
+
+        }
+
+        #btn-3:hover {
+            background-color: rgb(145, 17, 17);
+            color: white;
+
+        }
+
+        #add-another-question-btn {
+            border: none;
+            outline: none;
+            background-color: teal;
+            color: rgb(14, 14, 90);
+            font-size: 16px;
+
+        }
+
+        @media screen and (max-width:600px) {
+            .main-div {
+                width:100%;
+                margin:auto;
+                border: 2px solid red;
+
+            }
+
+            .btn-submit {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+
+            }
+            .add-another-question textarea{
+                columns: "30";
+            }
+
+        }
+
+</style>
+</head>
+
+<body>
+
+  <header class="shadow-sm pt-3 mb-3 ps-3 bg-body rounded">
+    <a class="hamburger-button d-lg-none" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+      aria-controls="offcanvasExample"><i class="fa fa-bars mt-4 hamburger-icon"></i></a>
+    <div class="offcanvas offcanvas-start d-xl-none" tabindex="-1" id="offcanvasExample"
+      aria-labelledby="offcanvasExampleLabel">
+      <div class="offcanvas-header">
+        <h2 class="offcanvas-title" id="offcanvasExampleLabel"><span class="nav-link" aria-current="page"
+            href="index.html">Interno<span class="Shala">Shala</span></span></h2>
+        <button type="button" class="btn-close text-reset me-2" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="navbar-nav fs-4">
+          <a class="nav-link ps-3 fs-5" href="internships.html"> Internships</a>
+          <a class="nav-link ps-3 fs-5" data-bs-toggle="collapse" href="#collapseExample" role="button"
+            aria-expanded="false" aria-controls="collapseExample">
+            Online Trainings <sup> <span class="orange-box px-1 py-1">OFFER!</span></sup>
+            <i class="fa fa-angle-down float-end me-1"></i>
+          </a>
+          <div class="collapse offcanvas-collapse-menu-1" id="collapseExample">
+            <ul>
+              <li>
+                <div class="accordion" id="accordionExample">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        <a class="dropdown-item">Programming</a>
+                      </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                      data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <ul class="offcanvas-dropdown-accordion-list">
+                          <li><a class="dropdown-item" href="#">Python</a></li>
+                          <li><a class="dropdown-item" href="#">Web Development</a></li>
+                          <li><a class="dropdown-item" href="#">Ethical Hacking</a></li>
+                          <li><a class="dropdown-item" href="#">C/C++</a></li>
+                          <li><a class="dropdown-item" href="#">Android App</a></li>
+                          <li><a class="dropdown-item" href="#">Java</a></li>
+                          <li><a class="dropdown-item" href="#">React</a></li>
+                          <li><a class="dropdown-item" href="#">Blockchain</a></li>
+                          <li><a class="dropdown-item" href="#">Angular</a></li>
+                          <li><a class="dropdown-item" href="#">Git and GitHub</a></li>
+                          <li><a class="dropdown-item" href="#">SAS programming</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="accordion" id="accordionExample">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <a class="dropdown-item">Data Science</a>
+                      </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                      data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <ul class="offcanvas-dropdown-accordion-list">
+                          <li><a class="dropdown-item" href="#">ML</a></li>
+                          <li><a class="dropdown-item" href="#">Data Science</a></li>
+                          <li><a class="dropdown-item" href="#">Tableau</a></li>
+                          <li><a class="dropdown-item" href="#">Deep Learning</a></li>
+                          <li><a class="dropdown-item" href="#">SAS programming</a></li>
+                          <li><a class="dropdown-item" href="#">Statistics</a></li>
+                          <li><a class="dropdown-item" href="#">Power Bi</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="accordion" id="accordionExample">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <a class="dropdown-item">Design</a>
+                      </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                      data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <ul class="offcanvas-dropdown-accordion-list">
+                          <li><a class="dropdown-item" href="#">Graphic Design</a></li>
+                          <li><a class="dropdown-item" href="#">UI/UX Design</a></li>
+                          <li><a class="dropdown-item" href="#">Video Editing</a></li>
+                          <li><a class="dropdown-item" href="#">Animation</a></li>
+                          <li><a class="dropdown-item" href="#">WordPress</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="accordion" id="accordionExample">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseFour" aria-expanded="" false aria-controls="collapseFour">
+                        <a class="dropdown-item">Business Management</a>
+                      </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                      data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <ul class="offcanvas-dropdown-accordion-list">
+                          <li><a class="dropdown-item" href="#">Marketing</a></li>
+                          <li><a class="dropdown-item" href="#">Excel</a></li>
+                          <li><a class="dropdown-item" href="#">Finance</a></li>
+                          <li><a class="dropdown-item" href="#">Comm. Skills</a></li>
+                          <li><a class="dropdown-item" href="#">Trading</a></li>
+                          <li><a class="dropdown-item" href="#">Tally</a></li>
+                          <li><a class="dropdown-item" href="#">HR</a></li>
+                          <li><a class="dropdown-item" href="#">Startup</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="accordion" id="accordionExample">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFive">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseFive" aria-expanded="" false aria-controls="collapseFive">
+                        <a class="dropdown-item">Engineering</a>
+                      </button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                      data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <ul class="offcanvas-dropdown-accordion-list">
+                          <li><a class="dropdown-item" href="#">AutoCAD</a></li>
+                          <li><a class="dropdown-item" href="#">AutoCAD 3D</a></li>
+                          <li><a class="dropdown-item" href="#">SOLIDWORKS</a></li>
+                          <li><a class="dropdown-item" href="#">STAAD Pro</a></li>
+                          <li><a class="dropdown-item" href="#">Fusion 360</a></li>
+                          <li><a class="dropdown-item" href="#">IoT</a></li>
+                          <li><a class="dropdown-item" href="#">Ansys</a></li>
+                          <li><a class="dropdown-item" href="#">3D Printing</a></li>
+                          <li><a class="dropdown-item" href="#">CATIA</a></li>
+                          <li><a class="dropdown-item" href="#">PCB Design</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="accordion" id="accordionExample">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingSix">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                        <a class="dropdown-item">Creative Arts</a>
+                      </button>
+                    </h2>
+                    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+                      data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <ul class="offcanvas-dropdown-accordion-list">
+                          <li><a class="dropdown-item" href="#">Creative Writing</a></li>
+                          <li><a class="dropdown-item" href="#">Guitar</a></li>
+                          <li><a class="dropdown-item" href="#">Photography</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="accordion" id="accordionExample">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingSeven">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                        <a class="dropdown-item">Language</a>
+                      </button>
+                    </h2>
+                    <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven"
+                      data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <ul class="offcanvas-dropdown-accordion-list">
+                          <li><a class="dropdown-item" href="#">English</a></li>
+                          <li><a class="dropdown-item" href="#">French</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="accordion" id="accordionExample">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingEight">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                        <a class="dropdown-item">Career Development</a>
+                      </button>
+                    </h2>
+                    <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight"
+                      data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <ul class="offcanvas-dropdown-accordion-list">
+                          <li><a class="dropdown-item" href="#">Business Skills</a></li>
+                          <li><a class="dropdown-item" href="#">Internship Preparation</a></li>
+                          <li><a class="dropdown-item" href="#">Job Preparation</a></li>
+                          <li><a class="dropdown-item" href="#">Coding Interviews</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="accordion" id="accordionExample">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingNine">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                        <a class="dropdown-item">Architecture</a>
+                      </button>
+                    </h2>
+                    <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine"
+                      data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <ul class="offcanvas-dropdown-accordion-list">
+                          <li><a class="dropdown-item" href="#">AutoCAD</a></li>
+                          <li><a class="dropdown-item" href="#">AutoCAD 3D</a></li>
+                          <li><a class="dropdown-item" href="#">Revit</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="accordion" id="accordionExample">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTen">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                        <a class="dropdown-item">Specialisations</a>
+                      </button>
+                    </h2>
+                    <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen"
+                      data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <ul class="offcanvas-dropdown-accordion-list">
+                          <li><a class="dropdown-item" href="#">Digital Marketing</a></li>
+                          <li><a class="dropdown-item" href="#">Data Science</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="pt-2 fs-5">
+                <a href="trainings.html" target="_blank" style="text-decoration:none;">View Trainings</a>
+              </li>
+
+            </ul>
+          </div>
+          <a class="nav-link ps-3 fs-5" href="#"> WFH Internships</a>
+          <a class="nav-link ps-3 fs-5" href="fresher-jobs.html"> Fresher Jobs</a>
+          <a class="nav-link ps-3 fs-5" href="contact-us.html"> Contact Us</a>
+          <hr class="offcanvas-hr">
+          <a class="nav-link ps-3 fs-6 offcanvas-extras" href="register-student.html"> Register - As a Student</a>
+          <a class="nav-link ps-3 fs-6 offcanvas-extras" href="register-employer.html"> Register - As an Employer</a>
+          <a class="nav-link ps-3 fs-6 offcanvas-extras text-reset" href="#" onclick="loginscreenon()"
+            data-bs-dismiss="offcanvas">Log In</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="overlay-login" id="overlay-login">
+      <span class="login-overlay-close-btn float-end white-text fs-1" onclick="loginscreenoff()"
+        title="Close Overlay">×</span>
+      <div class="overlay-login-content">
+        <div class="row bg-white text-center" style="height:40px; overflow:hidden;">
+          <a href="#student-login" class="col-6 border pt-1" style="text-decoration:none; color:black;">Student
+            login</a>
+          <a href="#employer-login" class="col-6 border pt-1" style="text-decoration:none; color:black;">Employer
+            login</a>
+        </div>
+        <div id="employer-login" class="page">
+          <div class="registration-card shadow border mx-auto p-3">
+            <form>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                  placeholder="name@example.com">
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1"
+                  placeholder="Must be 8-20 characters">
+              </div>
+              <div class="mb-3 float-end">
+                <a href="#" style="text-decoration:none;">Forgot password?</a>
+              </div><br><br>
+              <div class="mb-3 text-center">
+                <button type="submit" class="btn btn-primary px-3">Login</button>
+              </div>
+              <div class="mb-3 text-center">
+                <strong>New to InternoShala? Register </strong><a href="register-student.html"
+                  style="text-decoration:none;">Student</a>/<a href="register-employer.html"
+                  style="text-decoration:none;">Company</a>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div id="student-login" class="page default">
+          <div class="registration-card shadow border mx-auto p-3">
+            <form>
+              <div class="mb-3 text-center">
+                <button type="button" class="border btn fa fa-google-plus" name="button"> Sign up with google</button>
+              </div>
+              <hr class="footer-hr float-start mt-2" style="width:38%"><span class="more30 mx-4">OR</span>
+              <hr class="footer-hr float-end mt-2" style="width:38%"><br>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                  placeholder="name@example.com">
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1"
+                  placeholder="Must be 8-20 characters">
+              </div>
+              <div class="mb-3 float-end">
+                <a href="#" style="text-decoration:none;">Forgot password?</a>
+              </div><br><br>
+              <div class="mb-3 text-center">
+                <button type="submit" class="btn btn-primary px-3">Login</button>
+              </div>
+              <div class="mb-3 text-center">
+                <strong>New to InternoShala? Register </strong><a href="register-student.html"
+                  style="text-decoration:none;">Student</a>/<a href="register-employer.html"
+                  style="text-decoration:none;">Company</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="navbar navbar-light navbar-logo">
+      <div class="container-fluid">
+        <a href="index.html" class="navbar-brand mb-0 fs-3">Interno<span class="Shala">Shala</span></a>
+      </div>
+    </nav>
+
+    <a class="btn btn-outline-primary navbar-button-1 me-2 mt-3" href="#" onclick="loginscreenon()">Log In</a>
+
+    <nav class="navbar navbar-expand-lg navbar-light navbar-shortcuts mt-2">
+      <div class="container-fluid fw-bold">
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item me-4">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Internships
+              </a>
+              <ul class="dropdown-menu w-100 mt-4" aria-labelledby="navbarDropdownMenuLink">
+                <div class="row">
+                  <div class="col-4">
+                    <li>
+                      <h5 class="ms-2">Location</h5>
+                    </li>
+                    <li><a class="dropdown-item" href="#">Work from home</a></li>
+                    <li><a class="dropdown-item" href="#">Delhi</a></li>
+                    <li><a class="dropdown-item" href="#">Gurugram</a></li>
+                    <li><a class="dropdown-item" href="#">Chandigarh</a></li>
+                    <li><a class="dropdown-item" href="#">Bangaluru</a></li>
+                    <li><a class="dropdown-item" href="#">Chennai</a></li>
+                    <li><a class="dropdown-item" href="#">Mumbai</a></li>
+                    <li><a class="dropdown-item" href="#">Kolkata</a></li>
+                    <li><a class="dropdown-item" href="#">International</a></li>
+                  </div>
+                  <div class="col-4">
+                    <li>
+                      <h5 class="ms-2">Profile</h5>
+                    </li>
+                    <li><a class="dropdown-item" href="#">Computer Science</a></li>
+                    <li><a class="dropdown-item" href="#">Electronics</a></li>
+                    <li><a class="dropdown-item" href="#">Mechanical</a></li>
+                    <li><a class="dropdown-item" href="#">Civil</a></li>
+                    <li><a class="dropdown-item" href="#">Marketing</a></li>
+                    <li><a class="dropdown-item" href="#">Chemical</a></li>
+                    <li><a class="dropdown-item" href="#">Finance</a></li>
+                    <li><a class="dropdown-item" href="#">HR internships</a></li>
+                    <li><a class="dropdown-item" href="#">Content Writing</a></li>
+                  </div>
+                  <div class="col-4">
+                    <li>
+                      <h5 class="ms-2">Category</h5>
+                    </li>
+                    <li><a class="dropdown-item" href="#">Engineering</a></li>
+                    <li><a class="dropdown-item" href="#">MBA</a></li>
+                    <li><a class="dropdown-item" href="#">Part-time</a></li>
+                    <li><a class="dropdown-item" href="#">Graphic Design</a></li>
+                    <li><a class="dropdown-item" href="#">Humanities</a></li>
+                    <li><a class="dropdown-item" href="#">Science</a></li>
+                    <li><a class="dropdown-item" href="#">Law</a></li>
+                    <li><a class="dropdown-item" href="#">Architecture</a></li>
+                    <li><a class="dropdown-item" href="#">Internship for women</a></li>
+                  </div>
+                  <hr class="mt-4" style="width:80%; margin:auto;">
+                  <br>
+                  <center>
+                    <div class="mt-4">
+                      <div class="view-all-link-header d-none d-lg-block">
+                        <a href="internships.html">View all internships <i class="fa fa-long-arrow-right"></i></a>
+                      </div>
+                    </div>
+                  </center>
+                </div>
+              </ul>
+            </li>
+
+            <li class="nav-item me-4">
+              <a class="nav-link" aria-current="page" href="fresher-jobs.html">
+                Fresher Jobs <span class="orange-box px-1 py-1">New</span>
+              </a>
+            </li>
+
+            <li class="nav-item me-4">
+              <a class="nav-link dropdown-toggle" href="trainings.html" target="_blank" id="navbarDropdownMenuLink"
+                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Online Trainings <span class="orange-box px-1 py-1">OFFER!</span>
+              </a>
+              <ul class="dropdown-menu w-100 mt-4" aria-labelledby="navbarDropdownMenuLink">
+                <div class="row">
+                  <div class="col-4">
+                    <li>
+                      <h5 class="ms-2">Programming</h5>
+                    </li>
+                    <li><a class="dropdown-item" href="#">Python</a></li>
+                    <li><a class="dropdown-item" href="#">Web Development</a></li>
+                    <li><a class="dropdown-item" href="#">Ethical Hacking</a></li>
+                    <li><a class="dropdown-item" href="#">C/C++</a></li>
+                    <li><a class="dropdown-item" href="#">Android App</a></li>
+                    <li><a class="dropdown-item" href="#">Java</a></li>
+                    <li><a class="dropdown-item" href="#">React</a></li>
+                    <li><a class="dropdown-item" href="#">Blockchain</a></li>
+                    <li><a class="dropdown-item" href="#">Angular</a></li>
+                    <li><a class="dropdown-item" href="#">Git and GitHub</a></li>
+                    <li><a class="dropdown-item" href="#">SAS programming</a></li>
+                  </div>
+                  <div class="col-4">
+                    <li>
+                      <h5 class="ms-2">Business</h5>
+                    </li>
+                    <li><a class="dropdown-item" href="#">Marketing</a></li>
+                    <li><a class="dropdown-item" href="#">Excel</a></li>
+                    <li><a class="dropdown-item" href="#">Finance</a></li>
+                    <li><a class="dropdown-item" href="#">Comm. Skills</a></li>
+                    <li><a class="dropdown-item" href="#">Trading</a></li>
+                    <li><a class="dropdown-item" href="#">Tally</a></li>
+                    <li><a class="dropdown-item" href="#">HR</a></li>
+                    <li><a class="dropdown-item" href="#">Startup</a></li>
+                  </div>
+                  <div class="col-4">
+                    <li>
+                      <h5 class="ms-2">Engineering</h5>
+                    </li>
+                    <li><a class="dropdown-item" href="#">AutoCAD</a></li>
+                    <li><a class="dropdown-item" href="#">AutoCAD 3D</a></li>
+                    <li><a class="dropdown-item" href="#">SOLIDWORKS</a></li>
+                    <li><a class="dropdown-item" href="#">STAAD Pro</a></li>
+                    <li><a class="dropdown-item" href="#">Fusion 360</a></li>
+                    <li><a class="dropdown-item" href="#">IoT</a></li>
+                    <li><a class="dropdown-item" href="#">Ansys</a></li>
+                    <li><a class="dropdown-item" href="#">3D Printing</a></li>
+                    <li><a class="dropdown-item" href="#">CATIA</a></li>
+                    <li><a class="dropdown-item" href="#">PCB Design</a></li>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-4 mt-4">
+                    <li>
+                      <h5 class="ms-2">Data Science</h5>
+                    </li>
+                    <li><a class="dropdown-item" href="#">ML</a></li>
+                    <li><a class="dropdown-item" href="#">Data Science</a></li>
+                    <li><a class="dropdown-item" href="#">Tableau</a></li>
+                    <li><a class="dropdown-item" href="#">Deep Learning</a></li>
+                    <li><a class="dropdown-item" href="#">SAS programming</a></li>
+                    <li><a class="dropdown-item" href="#">Statistics</a></li>
+                    <li><a class="dropdown-item" href="#">Power Bi</a></li>
+                  </div>
+                  <div class="col-4 mt-4">
+                    <li>
+                      <h5 class="ms-2">Design</h5>
+                    </li>
+                    <li><a class="dropdown-item" href="#">Graphic Design</a></li>
+                    <li><a class="dropdown-item" href="#">UI/UX Design</a></li>
+                    <li><a class="dropdown-item" href="#">Video Editing</a></li>
+                    <li><a class="dropdown-item" href="#">Animation</a></li>
+                    <li><a class="dropdown-item" href="#">WordPress</a></li>
+                  </div>
+                  <div class="col-4 mt-4">
+                    <li>
+                      <h5 class="ms-2">Creative Arts</h5>
+                    </li>
+                    <li><a class="dropdown-item" href="#">Creative Writing</a></li>
+                    <li><a class="dropdown-item" href="#">Guitar</a></li>
+                    <li><a class="dropdown-item" href="#">Photography</a></li>
+                    <li>
+                      <h5 class="ms-2 mt-3">Language</h5>
+                    </li>
+                    <li><a class="dropdown-item" href="#">English</a></li>
+                    <li><a class="dropdown-item" href="#">French</a></li>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-4 mt-4">
+                    <li>
+                      <h5 class="ms-2">Career Development</h5>
+                    </li>
+                    <li><a class="dropdown-item" href="#">Business Skills</a></li>
+                    <li><a class="dropdown-item" href="#">Internship Preparation</a></li>
+                    <li><a class="dropdown-item" href="#">Job Preparation</a></li>
+                    <li><a class="dropdown-item" href="#">Coding Interviews</a></li>
+                  </div>
+                  <div class="col-4 mt-4">
+                    <li>
+                      <h5 class="ms-2">Architecture</h5>
+                    </li>
+                    <li><a class="dropdown-item" href="#">AutoCAD</a></li>
+                    <li><a class="dropdown-item" href="#">AutoCAD 3D</a></li>
+                    <li><a class="dropdown-item" href="#">Revit</a></li>
+                  </div>
+                  <div class="col-4 mt-4">
+                    <li>
+                      <h5 class="ms-2">Specialisations</h5>
+                    </li>
+                    <li><a class="dropdown-item" href="#">Digital Marketing</a></li>
+                    <li><a class="dropdown-item" href="#">Data Science</a></li>
+                  </div>
+                </div>
+                <hr class="mt-4" style="width:80%; margin:auto;">
+                <br>
+                <center>
+                  <div class="my-2">
+                    <div class="view-all-link-header d-none d-lg-block">
+                      <a href="trainings.html" target="_blank">View trainings <i class="fa fa-long-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </center>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link dropdown-toggle navbar-button-2 btn btn-primary me-1" href="#"
+                id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Register
+              </a>
+              <ul class="dropdown-menu mt-4 fs-5 navbar-dropdown-register" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" href="register-employer.html">As an employer</a></li>
+                <li><a class="dropdown-item" href="register-student.html">As a student</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+  </header>
+  <body>
+      <!-- ################################################################# -->
+      <div class="main-div">
+        <div class="under-main">
+
+            <div class="header-heading">
+                <h2 class="text-center">Post a fresher job </h2>
+
+            </div>
+
+            <form role="form" class="employer_registration" id="post_internship" name="post_internship" method="POST"
+                style="border: 1px solid black; border-radius: 10px; padding: 10px;">
+
+                <div class="about_section">
+                    <div class="internship_details_heading">
+                        <h4>Job details</h4>
+                    </div>
+
+                    <div id="profile-container" class="form-group has-success">
+                        <label for="profile" class="control-label">
+                            Job title
+                        </label>
+                        <div class="input-android-dev" id="input-for-android">
+                            <input type="text" class="" id="" name="profile_input"
+                                placeholder="e.g. Software Engineer Trainee" value="" autocomplete="off"><label
+                                id="profile-error" class="help-block form-error" for="profile"></label>
+                        </div>
+
+
+
+
+
+                        <div class="belongs-marketing" style="display: block;">
+                            <div id="type_container">
+                                <label for="type" class="control-label">Job type</label>
+                                <div class="radiobtn-marketing" id="type_radio_container">
+                                    <div class="radio">
+                                        <input type="radio" name="type" id="regular" value="regular"  onclick="my_Inoffice_btn()">
+                                        <label for="regular">In-office</label>
+                                    </div>
+                                    <div class="radio">
+                                        <input type="radio" name="type" id="virtual" value="virtual"  checked=""
+                                            onclick="hide_for_remote.style.display='none'">
+                                        <label for="virtual" id="virtual_label">
+
+                                            Remote
+                                        </label>
+                                    </div>
+
+                                </div>
+                                <script>
+                                    function my_Inoffice_btn() {
+                                        var s = document.getElementById('hide_for_remote');
+                                        if (s.style.display === 'none') {
+                                            s.style.display = 'block';
+                                        } else {
+                                            s.style.display = 'none';
+                                        }
+                                    }
+                                </script>
+                                
+                                <!-- $$$$$$$$$$$$$$$$$$$$$$$$$$$  -->
+                                <div >
+                                    <section id="hide_for_remote" style="display: none;"> 
+                                    <div class="checkbox">
+                                         <input type="checkbox" name="covid_wfh" value="covid_wfh"> <span>I am open to interviewing candidates online and allowing them to work from
+                                            home
+                                            or defer the joining date till current COVID-19 situation improves</span>
+                                             
+                                        
+
+                                        <div>
+                                            <br>
+                                            <label for="location" class="control-label">City/Cities</label>
+                                            <input type="text" class="" id="location" name="location"
+                                                placeholder="e.g. Mumbai" autocomplete="off" aria-required="true"
+                                                aria-invalid="false"><label class="" for="location"></label>
+                                        </div>
+                                        <br>
+                                        <div class="city-checkbox">
+                                            <input type="checkbox" value="yes" id=""
+                                                name="is_applications_from_above_cities_allowed">
+
+                                            <label for="application_from_above_cities">
+                                                Allow applications only from the above or neighboring cities
+                                            </label>
+                                        </div>
+                                    </section>
+                                    </div>
+                                    <!-- ################### -->
+
+
+
+
+
+
+<br>
+                                    <div class="no-of-opening">
+                                        <label for="open_positions" class="control-label">Number of openings</label>
+                                        <input type="number" value="" class="form-control error" id="open_positions"
+                                            name="open_positions" placeholder="e.g. 4" validators="required"
+                                            aria-required="true" aria-invalid="true">
+                                    </div>
+                                    <br>
+
+                                    <div class="internship_duration">
+
+
+                                        <div class="choose-duration">
+                                            <div>
+                                                <div class="interns-responsibility">
+                                                    <label>Job description</label>
+
+                                                    <textarea class="form-control" id="description" name="description"
+                                                        resize="false" required
+                                                        style="height: 175px; width:93%; padding: 10px;"> Key responsibilities: 
+                                                    : 
+        
+ 1.
+ 2.
+ 3.
+ Probation details (if any):</textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+            </form>
+
+
+        </div>
+        <div>
+            <br><br>
+            <br>
+            <section style="border: 1px solid black; padding: 10px; border-radius: 10px;">
+                <div>
+                    <h4 id="stipend_section_heading" class="">Salary &amp; perks</h4>
+                    <div>
+                        <label for="stipend_type" class="control-label" style="padding: 5px;">
+                            CTC
+                        </label>
+                        <br>
+
+
+                        <div class="stipend-content">
+                            <input id="salary2" class="stipend-chosen-select" name="salary2" value="" type="text"
+                                placeholder="e.g. 5.2" style="width: 150px;">
+
+
+                        </div>
+                        to
+
+                        <div class="stipend-content">
+                            <input id="salary3" class="stipend-chosen-select" name="salary2" value="" type="text"
+                                placeholder="   e.g. 6.2 " style="width: 150px;"> <span>LPA</span>
+
+                        </div>
+                    </div>
+                    <br>
+                    <div>
+                        <h4 style="font-weight: 400;">CTC breakup</h4>
+                        <p style="opacity: .7; "> Transparent CTC breakup attracts top candidates</p>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="Fixedpay">Fixed pay</label>
+                        <p style="opacity: .6;">Fixed pay is the fixed component of the CTC</p>
+                        <div class="stipend-content">
+                            <input id="fixed-pay" class="stipend-chosen-select" name="fixed-ctc" value="" type="text"
+                                placeholder="e.g. 5.2" style="width: 150px;">
+                            <div class="stipend-content">
+                                <select id="salary_currency" class="stipend-chosen-select" name="salary_currency">
+                                    <option value="rs">LPA</option>
+                                    <option value="dollar">%</option>
+
+                                </select>
+                            </div>
+
+                        </div>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="Fixedpay">Variable pay</label>
+                        <p style="opacity: .6;">Variable pay includes performance based
+                            cash incentives and bonuses</p>
+                        <div class="stipend-content">
+                            <input id="fixed-pay" class="stipend-chosen-select" name="fixed-ctc" value="" type="text"
+                                placeholder="e.g. 1.2" style="width: 150px;">
+                            <div class="stipend-content">
+                                <select id="salary_currency" class="stipend-chosen-select" name="salary_currency">
+                                    <option value="rs">LPA</option>
+                                    <option value="dollar">%</option>
+
+                                </select>
+                            </div>
+
+                        </div>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="Fixedpay">Other Incentives</label>
+                        <p style="opacity: .6;">Other incentives may include joining bonus,
+                            relocation assistance, gratuity, etc.</p>
+                        <div class="stipend-content">
+                            <input id="fixed-pay" class="stipend-chosen-select" name="fixed-ctc" value="" type="text"
+                                placeholder="e.g. 0.3" style="width: 150px;">
+                            <div class="stipend-content">
+                                <select id="salary_currency" class="stipend-chosen-select" name="salary_currency">
+                                    <option value="rs">LPA</option>
+                                    <option value="dollar">%</option>
+
+                                </select>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <section>
+
+
+                    <div class="perks">
+
+
+                        <div class="heading-perks">
+                            <label>Perks <span class="label_hint">(Optional)</span> </label>
+                            <div>
+                                <div class="perks-checkbox">
+                                    <div class="perks-checkbox-data">
+                                        <input type="checkbox" name="certificate" id="certificate">
+                                        <label for="certificate">Life Insurance
+                                        </label>
+                                    </div>
+                                    <div class="perks-checkbox-data">
+                                        <input type="checkbox" name="is_lor_provided" id="is_lor_provided">
+                                        <label for="is_lor_provided">Health Insurance</label>
+                                    </div>
+                                </div>
+                                <div class="perks-checkbox">
+                                    <div class="perks-checkbox-data">
+                                        <input type="checkbox" name="is_flexible_work_hours_allowed"
+                                            id="is_flexible_work_hours_allowed">
+                                        <label for="is_flexible_work_hours_allowed">Cab/Transportation facility</label>
+                                    </div>
+                                    <div class="perks-checkbox-data">
+                                        <input type="checkbox" name="is_five_days_a_week_allowed"
+                                            id="is_five_days_a_week_allowed">
+                                        <label for="is_five_days_a_week_allowed">5 days a week</label>
+                                    </div>
+                                </div>
+                                <div class="perks-checkbox">
+                                    <div class="perks-checkbox-data">
+                                        <input class="regular_perk_checkbox" type="checkbox"
+                                            name="is_informal_dress_code_allowed" id="is_informal_dress_code_allowed">
+                                        <label for="is_informal_dress_code_allowed">Informal dress code</label>
+                                    </div>
+                                    <div class="perks-checkbox-data">
+                                        <input class="regular_perk_checkbox" type="checkbox" name="is_snacks_allowed"
+                                            id="is_snacks_allowed">
+                                        <label for="is_snacks_allowed">Free snacks &amp; beverages</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br><br><br><br>
+                </section>
+        </div>
+        </section>
+    </div>
+    <br><br>
+
+
+    <section style="border:1px solid black; border-radius: 10px; padding: 10px; margin: 20px;">
+
+        <div id="who_can_apply_section" style="display: block;">
+            <h4>Skills &amp; assessment</h4>
+            <div class="section internshala-form" id="">
+
+                <div style="line-height: 50px;">
+                    <label for="category" class="control-label">Skills required </label>
+                </div>
+                <div>
+                    <input class="" type="text" autocomplete="off" placeholder="e.g. Java"
+                        style="width:89.4%; padding: 8px;">
+                </div>
+            </div>
+
+            <div>
+                <p>Do you have any candidate preferences? <span style="opacity: .7; font-size: 15px;">(Optional)</span>
+                </p>
+                <textarea name="odg1" rows="8" cols="30" title="Question 3" style="width: 90%;"
+                    placeholder="e.g Only Computer Science graduates preferred" style="padding: 20px;"></textarea><br />
+
+            </div>
+
+            <div id="student_assessment_container">
+                <label style="line-height: 50px;font-weight: 600;">Assessment</label>
+                <div class="label_faded" style="opacity: .7;">
+                    Question 1 will be asked to every applicant by default. If you wish, you may ask two more customized
+                    questions.
+                </div>
+                <p><span style="font-weight: 500">Question
+                        1</span>
+                    Why should you be hired for this role? </p>
+            </div>
+            <section class="add-another-question">
+                <p id="add_question" style="opacity: .6;"></p>
+                <textarea name="odg1" rows="8" cols="30" title="Question 3" style="display:none;"></textarea><br />
+                <div id="inner"></div>
+                <button type="button" name="addmore" id="add-another-question-btn" onClick="addmore(); ">+ Add another
+                    question</button>
+                <br /><br />
+
+            </section>
+    </section>
+
+
+    <div class="btn-submit" style="margin-top: 7%;">
+        <button id="btn-1">Save Draft</button>
+        <button id="btn-2"> Preview Job</button>
+        <button id="btn-3"> Post Job</button>
+    </div>
+    <script>
+        am = 1;
+        q = 2;
+        function addmore() {
+            document.getElementById("add_question").innerHTML = "If you want the applicants to upload a document as a part of the assessment questions, please ask them to upload it on Dropbox or Google Drive and share the link in the answer";
+            var textarea1 = document.createElement("textarea");
+            textarea1.name = "odg" + am;
+            textarea1.rows = 8;
+            textarea1.cols = 30;
+            textarea1.style.width="90%";
+
+            textarea1.placeholder = "Type your Question " + q + " here";
+            textarea1.style.padding = "20px";
+            q++;
+            var div = document.createElement("div");
+            div.innerHTML = textarea1.outerHTML;
+            document.getElementById("inner").appendChild(div);
+            am++;
+
+        }
+    </script>
+    </div>
+<br>
+<br>
+<br>
+<br>
+    <!-- <br>
+    <br>
+    <br>
+    <br> -->
+    <!-- ############################################################### -->
+
+
+
+ 
+    <!-- <div class="footer"> -->
+        <br> 
+        <br><br>
+            <footer class="internships-footer">
+        <div class="row footer-link">
+          <div class="col-lg-3 d-none d-lg-block">
+            <h5 class="ms-4"> Internships by places</h5>
+            <ul class="footer-list">
+              <li>In India</li>
+              <li>In Gurugram</li>
+              <li>In Chandigarh</li>
+              <li>In Delhi</li>
+              <li>In Bengaluru</li>
+              <li>In Chennai</li>
+              <li>In Mumbai</li>
+              <li>In Kolkata</li>
+              <li>Virtual</li>
+            </ul>
+          </div>
+    
+          <div class="col-lg-3 d-none d-lg-block">
+            <h5 class="ms-4"> Internships by stream</h5>
+            <ul class="footer-list">
+              <li>Computer Science</li>
+              <li>Electrnics</li>
+              <li>Mechanical</li>
+              <li>Civil</li>
+              <li>Marketing</li>
+              <li>Chemical</li>
+              <li>Finance</li>
+              <li>Summer Research</li>
+              <li>Campus Ambassador</li>
+            </ul>
+          </div>
+    
+          <div class="col-lg-3 d-none d-lg-block">
+            <h5 class="ms-4"> Online Trainings</h5>
+            <ul class="footer-list">
+              <li>Web Development</li>
+              <li>Android Development</li>
+              <li>Python Programming</li>
+              <li>Data Science</li>
+              <li>Ethical Hacking</li>
+              <li>Java</li>
+              <li>Digital Marketing</li>
+              <li>Advanced Excel</li>
+              <li>C/C++ programming</li>
+            </ul>
+          </div>
+    
+          <div class="col-lg-3">
+            <h5 class="d-none d-lg-block ms-4"> About Us</h5>
+            <ul class="footer-list">
+              <li>InternoShala</li>
+              <li>We're hiring</li>
+              <li>Hire Interns</li>
+              <li>Team diary</li>
+              <li>Blogs</li>
+              <li>Our Services</li>
+              <li>Terms</li>
+              <li>Privacy</li>
+              <li><a href="contact-us.html">Contact Us</a>Contact Us</li>
+            </ul>
+          </div>
+        </div>
+    
+        <hr class="footer-hr my-5">
+    
+        <a class="btn btn-outline-primary app-button ms-5" href="#"><i class="fa fa-play"> Get our app!</i></a>
+    
+        <div class="social-icons ms-5">
+          <a href="#"><i class="fa fa-instagram mx-1"></i></a>
+          <a href="#"><i class="fa fa-youtube mx-1"></i></a>
+          <a href="#"><i class="fa fa-twitter mx-1"></i></a>
+          <a href="#"><i class="fa fa-linkedin mx-1"></i></a>
+        </div>
+    
+        <div class="copyright me-3 mt-3">
+          <i class="fa fa-copyright"> Copyright 2021 InternoShala</i>
+        </div>
+    
+      </footer>
+      
+    
+      <script src="script.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+        <!-- </div> -->
+
+  </body>
+  </html>

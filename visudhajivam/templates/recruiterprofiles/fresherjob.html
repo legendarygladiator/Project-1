@@ -1,0 +1,198 @@
+{% extends 'base.html' %}
+{% block title %}training{% endblock title %}
+{% block content%}<link rel="stylesheet" href="/static/css/fresher.css">{% endblock content %}
+{% block body %}
+
+   
+   
+    <!---------------HEADER-------------->
+   
+        
+        <div class="banner text-center">
+            <h1>JOBS AROUND YOU</h1>
+            <p>Neque porro quisquam est est ipsum.</p>
+        </div>
+    </div>
+    <div class="search-job text-center">
+        <input type="text" class="form-control" placeholder="Search Keyword">
+        <input type="text" class="form-control" placeholder="Company">
+        <input type="text" class="form-control" placeholder="Location">
+        <input type="button" class="btn btn-primary" value="Find Job">
+    </div>
+    <!------------RECENT JOBS------------->
+    <div id="jobs">
+        <div class="container">
+            <h5>RECENT UPDATES</h>
+            {% for i in mypost %}
+            <div class="company-details">
+                <div class="job-update">
+                    <h4><b>{{i.position}}</b></h4>
+                    <p>{{i.company}}</p>
+                    <i class="fas fa-briefcase-medical"></i><span>{{i.experience}}</span><br>
+                    <i class="fas fa-rupee-sign"></i><span>{{i.package}}</span><br>
+                    <i class="fas fa-map-marker-alt"></i><span>{{i.location}}</span>
+                    <p>Skills <i class="fas fa-angle-double-right"></i><small>{{i.skill}}</small>,<small>Python</small>,<small>HTML,CSS</small>,<small>.Net</small></p>
+                    <p>Description<i class="fas fa-angle-double-right"></i>{{i.desc|slice:"0:100"}}...<a href="/main/{{i.post_id}}/job_details/">Read More</a></p>
+                </div>
+                <br>
+                {%  if user.is_employer %}
+                {% else %}
+                <div class="apply-btn">
+                    <a href="/{{i.post_id}}/"><button type="button" class="btn btn-primary">Apply</button></a>
+                </div>
+                {% endif %}
+                {% endfor %}
+                <div class="company-details">
+                    <div class="job-update">
+                        <h4><b>Seasoned Senior Python Developer(Fresher)</b></h4>
+                        <p>XYZ Solutions Pvt.</p>
+                        <i class="fas fa-briefcase-medical"></i><span>0-1 years</span><br>
+                        <i class="fas fa-rupee-sign"></i><span>3.50-4.00 Lacs p.a.</span><br>
+                        <i class="fas fa-map-marker-alt"></i><span>Banglore</span>
+                        <p>Skills <i class="fas fa-angle-double-right"></i><small>Java</small>,<small>Python</small>,<small>HTML,CSS</small>,<small>.Net</small></p>
+                        <p>Description<i class="fas fa-angle-double-right"></i>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elit nibh, gravida pharetra metus eget, vestibulum dignissim magna. <a href="">Read More</a></p>
+                    </div>
+                    <br>
+                    <div class="apply-btn">
+                        <button type="button" class="btn btn-primary">Apply</button>
+                    </div>
+                </div>
+                <div class="company-details">
+                    <div class="job-update">
+                        <h4><b>Seasoned Senior Python Developer(Fresher)</b></h4>
+                        <p>XYZ Solutions Pvt.</p>
+                        <i class="fas fa-briefcase-medical"></i><span>0-1 years</span><br>
+                        <i class="fas fa-rupee-sign"></i><span>3.50-4.00 Lacs p.a.</span><br>
+                        <i class="fas fa-map-marker-alt"></i><span>Banglore</span>
+                        <p>Skills <i class="fas fa-angle-double-right"></i><small>Java</small>,<small>Python</small>,<small>HTML,CSS</small>,<small>.Net</small></p>
+                        <p>Description<i class="fas fa-angle-double-right"></i>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elit nibh, gravida pharetra metus eget, vestibulum dignissim magna. <a href="">Read More</a></p>
+                    </div>
+                    <br>
+                    <div class="apply-btn">
+                        <button type="button" class="btn btn-primary">Apply</button>
+                    </div>
+                </div>
+                <div class="company-details">
+                    <div class="job-update">
+                        <h4><b>Seasoned Senior Python Developer(Fresher)</b></h4>
+                        <p>XYZ Solutions Pvt.</p>
+                        <i class="fas fa-briefcase-medical"></i><span>0-1 years</span><br>
+                        <i class="fas fa-rupee-sign"></i><span>3.50-4.00 Lacs p.a.</span><br>
+                        <i class="fas fa-map-marker-alt"></i><span>Banglore</span>
+                        <p>Skills <i class="fas fa-angle-double-right"></i><small>Java</small>,<small>Python</small>,<small>HTML,CSS</small>,<small>.Net</small></p>
+                        <p>Description<i class="fas fa-angle-double-right"></i>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elit nibh, gravida pharetra metus eget, vestibulum dignissim magna. <a href="">Read More</a></p>
+                    </div>
+                    <br>
+                    <div class="apply-btn">
+                        <button type="button" class="btn btn-primary">Apply</button>
+                    </div>
+                </div>
+                <div class="company-details">
+                    <div class="job-update">
+                        <h4><b>Seasoned Senior Python Developer(Fresher)</b></h4>
+                        <p>XYZ Solutions Pvt.</p>
+                        <i class="fas fa-briefcase-medical"></i><span>0-1 years</span><br>
+                        <i class="fas fa-rupee-sign"></i><span>3.50-4.00 Lacs p.a.</span><br>
+                        <i class="fas fa-map-marker-alt"></i><span>Banglore</span>
+                        <p>Skills <i class="fas fa-angle-double-right"></i><small>Java</small>,<small>Python</small>,<small>HTML,CSS</small>,<small>.Net</small></p>
+                        <p>Description<i class="fas fa-angle-double-right"></i>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elit nibh, gravida pharetra metus eget, vestibulum dignissim magna. <a href="">Read More</a></p>
+                    </div>
+                    <br>
+                    <div class="apply-btn">
+                        <button type="button" class="btn btn-primary">Apply</button>
+                    </div>
+                </div>
+                <div class="company-details">
+                    <div class="job-update">
+                        <h4><b>Seasoned Senior Python Developer(Fresher)</b></h4>
+                        <p>XYZ Solutions Pvt.</p>
+                        <i class="fas fa-briefcase-medical"></i><span>0-1 years</span><br>
+                        <i class="fas fa-rupee-sign"></i><span>3.50-4.00 Lacs p.a.</span><br>
+                        <i class="fas fa-map-marker-alt"></i><span>Banglore</span>
+                        <p>Skills <i class="fas fa-angle-double-right"></i><small>Java</small>,<small>Python</small>,<small>HTML,CSS</small>,<small>.Net</small></p>
+                        <p>Description<i class="fas fa-angle-double-right"></i>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elit nibh, gravida pharetra metus eget, vestibulum dignissim magna. <a href="">Read More</a></p>
+                    </div>
+                    <br>
+                    <div class="apply-btn">
+                        <button type="button" class="btn btn-primary">Apply</button>
+                    </div>
+                </div>
+              
+                
+                
+                
+                <div class="company-details">
+                    <div class="job-update">
+                        <h4><b>Seasoned Senior Python Developer(Fresher)</b></h4>
+                        <p>XYZ Solutions Pvt.</p>
+                        <i class="fas fa-briefcase-medical"></i><span>0-1 years</span><br>
+                        <i class="fas fa-rupee-sign"></i><span>3.50-4.00 Lacs p.a.</span><br>
+                        <i class="fas fa-map-marker-alt"></i><span>Banglore</span>
+                        <p>Skills <i class="fas fa-angle-double-right"></i><small>Java</small>,<small>Python</small>,<small>HTML,CSS</small>,<small>.Net</small></p>
+                        <p>Description<i class="fas fa-angle-double-right"></i>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elit nibh, gravida pharetra metus eget, vestibulum dignissim magna. <a href="">Read More</a></p>
+                    </div>
+                    <br>
+                    <div class="apply-btn">
+                        <button type="button" class="btn btn-primary">Apply</button>
+                    </div>
+                </div>
+                <ul class="pagelink text-center">
+                    <li class="left-arrow">&#8592;</li>
+                    <li class="active">1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                    <li class="right-arrow">&#8592;</li>
+                </ul>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div id="site-stats">
+            <div class="container text-center">
+                <h3> <i class="fas fa-hand-point-right"></i>Our Site Stats</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="stats-box">
+                                    <i class="fas fa-user"></i><span><small>100k+</small></span>
+                                    <p>Job-Seekers</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="stats-box">
+                                    <i class="fab fa-slideshare"></i><span><small>500+</small></span>
+                                    <p>Employers</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="stats-box">
+                                    <i class="fas fa-hand-peace"></i><span><small>10k+</small></span>
+                                    <p>Active Job</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="stats-box">
+                                    <i class="fas fa-building"></i></i><span><small>400+</small></span>
+                                    <p>Companies</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <!------------FOOTER------------->
+    
+{% endblock body%}

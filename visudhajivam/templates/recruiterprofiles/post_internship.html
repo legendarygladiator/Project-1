@@ -1,0 +1,817 @@
+
+{% extends 'base.html' %}
+{% block title %}project{% endblock title %}
+ {% block style %}
+   
+  <style>
+    
+    
+      body {
+            background: url("images/image1.png");
+            /* background-repeat: no-repeat; */
+            background-size: contain;
+
+        }
+
+        div.my-6:nth-child(2) {
+             overflow: auto;
+             margin-top: 6%;
+             }
+
+        .main-div {
+            width: 60%;
+            margin: auto;
+            background-color: rgb(241, 252, 252);
+
+            border: 1px solid rgb(248, 241, 243);
+            box-shadow: 2px 2px 3px black;
+            color: black;
+            font-size: 16px;
+
+            /* padding: 10px; */
+        }
+
+        .under-main {
+            /* border: 1px solid red; */
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px;
+
+
+        }
+
+
+
+        .header-heading {
+            text-align: center;
+        }
+
+        .profile_radio_container {
+
+            margin: 20px;
+        }
+
+        .radio {
+            margin: 10px;
+
+        }
+
+        .input-android-dev {
+            padding: 10px;
+            margin: 10px;
+        }
+
+        .input-android-dev input {
+            padding: 10px;
+            width: 90%;
+        }
+
+        .belongs-marketing {
+            margin: 10px;
+        }
+
+        .checkbox-marketing {
+            margin: 12px;
+
+        }
+
+        .radiobtn-marketing {
+            margin-left: -10px;
+        }
+
+        #location {
+            padding: 8px;
+            width: 90%;
+            margin-top: 10px;
+        }
+
+        .internship-date-label {
+            line-height: 30px;
+        }
+
+        .no-of-opening input {
+            width: 90%;
+            padding: 8px;
+
+        }
+
+        .no-of-opening {
+            line-height: 35px;
+        }
+
+        .intern-date-picker {
+            padding: 8px;
+            margin: 10px;
+            margin-left: 10px;
+            width: 30%;
+        }
+
+        #start_date_2 {
+            margin-left: 27px;
+
+
+        }
+
+        .chosen-select {
+            width: 30%;
+            padding: 8px;
+            margin: 10px;
+        }
+
+        .stipend-radio-btn {
+            display: inline-block;
+            margin: 20px;
+        }
+
+        .stipend-content {
+            display: inline-block;
+            margin: 5px;
+        }
+
+        .stipend-chosen-select {
+            padding: 8px;
+            width: 120px;
+        }
+
+        .perks-checkbox {
+            float: left;
+
+        }
+
+        .perks-checkbox-data {
+            margin: 10px;
+        }
+
+        .perks-question {
+            margin: 10px;
+
+        }
+
+        .add-another-question button {
+            padding: 5px;
+            color: black;
+            background-color: white;
+            outline: none;
+            border: none;
+            color: black;
+            cursor: pointer;
+        }
+
+        .btn-submit {
+            padding: 10px;
+            float: right;
+            margin: 20px;
+        }
+
+        .btn-submit button {
+            padding: 7px;
+            width: 140px;
+            background-color: white;
+            /* background-color: blue; */
+
+        }
+
+        #btn-1:hover {
+            background-color: teal;
+            color: white;
+
+        }
+
+        #btn-2:hover {
+            background-color: teal;
+            color: white;
+
+
+        }
+        
+
+        @media screen and (max-width: 500px) {
+            .main-div {
+                width: 96%;
+
+            }
+
+            .btn-submit {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+
+            }
+
+
+        }
+
+</style>
+{% endblock style %}
+{% block body%}
+
+     <div class="container my-6"> 
+        <h3 ><a href="/main/myjob/" class="text-decoration-none"><b class="text-dark " >>> Go to My jobs<b></a></h3>
+      <form  action="/main/" method="post">{%csrf_token %} 
+      
+      <div class="main-div my-6 ">
+        <div class="under-main">
+
+            <div class="header-heading">
+                <h2 class="text-center">Post an internship </h2>
+                <p class="text-center">
+                    Need assistance? Please visit <a href="#" target="_blank">Help Center</a>
+                </p>
+            </div>
+
+            <form role="form" class="employer_registration" id="post_internship" name="post_internship" method="POST"
+                style="border: 1px solid black; border-radius: 10px; padding: 10px;">
+
+                <div class="about_section">
+                    <div class="internship_details_heading">
+                        <h4>Internship details</h4>
+                    </div>
+                    <!-- <div id="internship_detail_section" class="section internshala-form  "> -->
+
+                    <div id="profile-container" class="form-group has-success">
+                        
+
+
+                        <div class="profile_radio_container flex-row">
+                        </div>
+                        <div>
+                            <label for="location" class="control-label">Posiion</label>
+                            <div>
+                                <input type="text" class="" id="location" name="position" placeholder="e.g. Mumbai"
+                                    autocomplete="off" aria-required="true" aria-invalid="false"><label class=""
+                                    for="location"></label>
+                            </div>
+                        </div>
+                            <div class="radio not_campus_ambassador">
+                                <input type="radio" name="profile_primary" class="profile_primary_radio_button valid"
+                                    id="profile_primary_0" value="Business Development (Sales)"
+                                    onclick="myMarketing_hide()">
+                                <label for="profile_primary_0">Business Development (Sales)</label>
+                            </div>
+                            <div class="radio not_campus_ambassador">
+                                <input type="radio" name="profile_primary" class="profile_primary_radio_button valid"
+                                    id="profile_primary_1" value="Web Development"
+                                    onclick="for_social_media.style.display='none'">
+                                <label for="profile_primary_1">Web Development</label>
+                            </div>
+                            <div class="radio not_campus_ambassador">
+                                <input type="radio" name="profile_primary" class="profile_primary_radio_button valid"
+                                    id="profile_primary_2" value="Graphic Design"
+                                    onclick="for_social_media.style.display='none'">
+                                <label for="profile_primary_2">Graphic Design</label>
+                            </div>
+                            <div class="radio not_campus_ambassador">
+                                <input type="radio" name="profile_primary" class="profile_primary_radio_button valid"
+                                    id="profile_primary_3" value="Content Writing"
+                                    onclick="for_social_media.style.display='none'">
+                                <label for="profile_primary_3">Content Writing</label>
+                            </div>
+                            <div class="radio not_campus_ambassador">
+                                <input type="radio" name="profile_primary" class="" id="profile_primary_4"
+                                    value="Social Media Marketing" onclick="myMarketing()"
+                                    class="social-media-marketing">
+                                <label for="profile_primary_4">Social Media Marketing</label>
+                            </div>
+                            <div class="radio not_campus_ambassador">
+                                <input type="radio" name="profile_primary" class="profile_primary_radio_button valid"
+                                    id="profile_primary_5" value="Marketing"
+                                    onclick="for_social_media.style.display='none'">
+                                <label for="profile_primary_5">Marketing</label>
+                            </div>
+                            <div class="radio not_campus_ambassador">
+                                <input type="radio" name="profile_primary" class="profile_primary_radio_button valid"
+                                    id="profile_primary_6" value="Operations"
+                                    onclick="for_social_media.style.display='none'">
+                                <label for="profile_primary_6">Operations</label>
+                            </div>
+                            <div class="radio not_campus_ambassador">
+                                <input type="radio" name="profile_primary" class="profile_primary_radio_button valid"
+                                    id="profile_primary_7" value="Mobile App Development"
+                                    onclick="for_social_media.style.display='none'">
+                                <label for="profile_primary_7">Mobile App Development</label>
+                            </div>
+                            <div class="radio not_campus_ambassador">
+                                <input type="radio" name="profile_primary" class="profile_primary_radio_button valid"
+                                    id="profile_primary_8" value="Digital Marketing"
+                                    onclick="for_social_media.style.display='none'">
+                                <label for="profile_primary_8">Digital Marketing</label>
+                            </div>
+                            <div class="radio not_campus_ambassador">
+                                <input type="radio" name="profile_primary" class="profile_primary_radio_button valid"
+                                    id="profile_primary_9" value="Human Resources (HR)"
+                                    onclick="for_social_media.style.display='none'">
+                                <label for="profile_primary_9">Human Resources (HR)</label>
+                            </div>
+                            <div class="radio not_campus_ambassador">
+                                <input type="radio" name="profile_primary" class="profile_primary_radio_button valid"
+                                    id="profile_primary_10" value="Law/Legal"
+                                    onclick="for_social_media.style.display='none'">
+                                <label for="profile_primary_10">Law/Legal</label>
+                            </div>
+                            <div class="radio ">
+                                <input type="radio" name="profile_primary" class="profile_primary_radio_button valid"
+                                    id="profile_primary_11" value="Campus Ambassador"
+                                    onclick="for_social_media.style.display='none'">
+                                <label for="profile_primary_11">Campus Ambassador</label>
+                            </div>
+                            <div class="form-group radio not_campus_ambassador">
+                                <input type="radio" id="more" name="profile_primary"
+                                    class="profile_primary_radio_button valid" value="more"
+                                    onclick="myFunction_other()">
+                                <label for="more"> Other </label>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <script>
+                        function myMarketing() {
+                            var s = document.getElementById('for_social_media');
+                            if (s.style.display === 'none') {
+                                s.style.display = 'block';
+                            } else {
+                                s.style.display = 'none';
+                            }
+                        }
+                    </script>
+
+
+                    <script>
+                        function myFunction_other() {
+                            var s = document.getElementById('input-for-android');
+                            if (s.style.display === 'none') {
+                                s.style.display = 'block';
+                            } else {
+                                s.style.display = 'none';
+                            }
+                        }
+                    </script>
+                
+
+                    <div class="input-android-dev" id="input-for-android" style="display: none;">
+                        <input type="text" class="" id="" name="profile_input"
+                            placeholder="e.g. Android App Development" value="" autocomplete="off" aria-required="true"
+                            aria-invalid="true"><label id="profile-error" class="help-block form-error"
+                            for="profile"></label>
+                    </div>
+                    <!-- <label id="" class="" for="profile_primary"></label> -->
+                    <div id="for_social_media" style="display: none;">
+                        <div class="belongs-marketing"><label class="control-label">Add
+                                secondary profiles to your Social Media Marketing internship? <span
+                                    class="label_hint">(Optional)</span></label>
+                        </div>
+                        <div class="checkbox-marketing">
+                            <input type="checkbox" name="profile_secondary[]" id="profile_secondary_0"
+                                value=" Content Writing"><label id="profile_secondary_label"
+                                for="profile_secondary_0">&nbsp;Content Writing</label>
+                        </div>
+                        <div class="checkbox-marketing"><input type="checkbox" name="profile_secondary[]"
+                                id="profile_secondary_1" value=" Digital Marketing"><label id="profile_secondary_label"
+                                for="profile_secondary_1">&nbsp;Digital Marketing</label></div>
+                    </div>
+
+                </div>
+
+
+                <div class="belongs-marketing" style="display: block;">
+                    <div id="type_container">
+                        <label for="type" class="control-label">Internship type</label>
+                        <div class="radiobtn-marketing" id="type_radio_container">
+                            <div class="radio">
+                                <input type="radio" name="type" id="regular" value="regular" checked="">
+                                <label for="regular">Regular (In-office/On-field)</label>
+                            </div>
+                            <div class="radio">
+                                <input type="radio" name="type" id="virtual" value="virtual">
+                                <label for="virtual" id="virtual_label">
+                                    Work from home
+                                    <span class=""> (Recommended due to COVID-19 situation)</span>
+                                </label>
+                            </div>
+                            <div class="radio" style="display: none; ">
+                                <input type="radio" name="type" id="campus_ambassador" value="campus_ambassador">
+                                <label for="campus_ambassador" id="virtual">Campus Ambassador</label>
+                            </div>
+                        </div>
+                        <div class="checkbox" id="covid_wfh_container" style="margin-top: 20px;">
+                            <input type="checkbox" name="covid_wfh" value="covid_wfh" id="covid_wfh"
+                                aria-invalid="false" class="valid">
+                            <label for="covid_wfh" style="line-height: 1.57;">
+                                I am open to interviewing candidates online and allowing them to work from home
+                                or defer the joining date till current COVID-19 situation improves
+                            </label>
+                        </div>
+                    </div>
+                    <br>
+                    <div id="hide_all_content">
+                      <div>
+                        <label for="location" class="control-label">Company</label>
+                        <div>
+                            <input type="text" class="" id="location" name="company" placeholder="e.g. Mumbai"
+                                autocomplete="off" aria-required="true" aria-invalid="false"><label class=""
+                                for="location"></label>
+                        </div>
+                    </div>
+                        <div>
+                            <label for="location" class="control-label">City/Cities</label>
+                            <div>
+                                <input type="text" class="" id="location" name="city" placeholder="e.g. Mumbai"
+                                    autocomplete="off" aria-required="true" aria-invalid="false"><label class=""
+                                    for="location"></label>
+                            </div>
+                        </div>
+
+                        <div>
+                          <label for="location" class="control-label">state</label>
+                          <div>
+                              <input type="text" class="" id="location" name="location" placeholder="e.g. Mumbai"
+                                  autocomplete="off" aria-required="true" aria-invalid="false"><label class=""
+                                  for="location"></label>
+                          </div>
+                      </div>
+                        <br>
+
+                        <div class="city-checkbox">
+                            <input type="checkbox" value="yes" id="" name="is_applications_from_above_cities_allowed"
+                                aria-invalid="false" class="valid">
+                            <label for="application_from_above_cities">
+                                Allow applications only from the above or neighboring cities
+                            </label>
+                        </div>
+                        <br>
+
+                        <div class="checkbox-part-time" id="parttime-allowed" style="display: flex;">
+                            <label for="part_time" class="control-label">
+                                  Is part-time allowed?&nbsp; &nbsp;
+                            </label>
+
+                            <div class="checkbox-part-time">
+                            
+                                <input type="checkbox" name="part_time" id="part_time_allowed" value="yes"
+                                    aria-invalid="false" class="valid">
+                                <label for="part_time_allowed"></label>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="no-of-opening">
+                            <label for="open_positions" class="control-label">Number of openings</label>
+                            <input type="number" value="" class="form-control error" id="open_positions"
+                                name="open_positions" placeholder="e.g. 4" validators="required" aria-required="true"
+                                aria-invalid="true">
+                        </div>
+                        <br>
+                        <div class="internship-date-label">
+                            <label>Internship start date</label>
+                            <div class="internship-date">
+                                <div class="radiobtn-intern-time">
+                                    <input type="radio" name="start_date" value="immediately" id="immediately"
+                                        checked="" onclick=" myLaterContent_hide()">
+                                    <label for="immediately">Immediately (within next 30 days)</label>
+                                </div>
+                                <div class="radiobtn-intern-time" id="later_radio_button_container">
+                                    <input type="radio" name="start_date" value="later" id="later"
+                                        onclick="myLaterContent()">
+                                    <label for="later">Later</label>
+                                </div>
+                            </div>
+
+                            <script>
+                                function myLaterContent() {
+                                    document.getElementById("later-content").style.visibility = "visible";
+                                }
+                                function myLaterContent_hide() {
+                                    document.getElementById("later-content").style.visibility = "hidden";
+
+                                }
+
+                            </script>
+
+                            <div class="intern-date-later" id="later-content" style="visibility: hidden;">
+                                <div style="display: inline-block;">
+                                    <span class="intern-date-span">From</span>
+                                    <input type="text" value="" class="intern-date-picker" id="start_date_1"
+                                        name="start_date_1" placeholder="dd/mm/yyyy" style="width: 150px;">
+                                </div>
+
+                                <div style="display:inline-block;">
+                                    <span>To</span>
+                                    <input type="text" value="" class="intern-date-picker" id="start_date_2"
+                                        name="start_date_2" placeholder="dd/mm/yyyy" style="width: 150px;">
+                                </div>
+                            </div>
+
+                            <div class="internship_duration">
+                                <label for="fixed_duration_value" class="control-label">
+                                    Internship duration</label>
+                                <br>
+                                <label class="" style="opacity: 0.6;">Shorter the duration, more the
+                                    applications</label>
+
+                                <div class="choose-duration">
+                                    <div>
+                                        <select class="chosen-select" id="fixed_duration_value" name="exp"
+                                            name="fixed_duration_value">
+                                            <option value="" selected="">Choose duration</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="6">11</option>
+                                            <option value="6">12</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="choose-duration">
+                                        <div>
+                                            <select class="chosen-select" id="fixed_duration_value"
+                                                name="fixed_duration_value">
+                                                <option value="Week">Week</option>
+                                                <option value="Month">Month</option>
+                                                <option value="Year">Year</option>
+
+                                            </select>
+                                            <div>
+
+
+                                            </div>
+                                            <div>
+                                                <div class="interns-responsibility">
+                                                    <label>Intern’s responsibilities</label>
+                                                    <div class="intern-tips1" style="opacity: 0.6;">Internship
+                                                        posts with detailed job description receive significantly more
+                                                        applications.
+                                                    </div>
+
+                                                    <div id="example_jd_link" style="color: rgb(151, 57, 57);">
+                                                        <span>See
+                                                            tips and sample JD</span>
+                                                    </div>
+                                                    <textarea class="form-control" id="description" name="desc"
+                                                        resize="false" style="height: 175px; width:93%;">Selected intern's day-to-day responsibilities include: 
+        
+        1.
+        2.
+        3.</textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+            </form>
+        </div>
+        <div>
+            <br><br>
+            <br>
+            <section style="border: 1px solid black; padding: 10px; border-radius: 10px;">
+                <div>
+                    <h4 id="stipend_section_heading" class="">Stipend &amp; perks</h4>
+                    <div>
+                        <label for="stipend_type" class="control-label">
+                            Stipend
+                        </label>
+                        <div class="stipend-all-btn">
+                            <div class="stipend-radio-btn">
+                                <input type="radio" name="stipend_type" id="stipend-fixed" value="fixed" checked=""
+                                    class="stipend_type" onclick="hide_for_paid_stipend.style.visibility='visible'">
+                                <label for="stipend-fixed">
+                                    Fixed
+                                </label>
+                                <span id="fixed"></span>
+                            </div>
+                            <div class="stipend-radio-btn">
+                                <input type="radio" name="stipend_type" id="stipend-variable" value="variable"
+                                    class="stipend_type" > 
+                                    <!-- onclick="salary3.style.visibility='visible'" -->
+                                <label id="stipend-variable-label" for="stipend-variable">
+                                    Negotiable
+                                </label>
+                                <span id="negotiable"></span>
+                            </div>
+                            <div class="stipend-radio-btn">
+                                <input type="radio" name="stipend_type" id="stipend-performance" value="performance"
+                                    class="stipend_type">
+                                <label for="stipend-performance">Performance based</label>
+                                <span id="performance-based"></span>
+                            </div>
+                            <div class="stipend-radio-btn">
+                                <input type="radio" name="stipend_type" id="stipend-unpaid" value="unpaid"
+                                    class="stipend_type" onclick="hide_for_paid_stipend.style.visibility='hidden'">
+                                <label for="stipend-unpaid">
+                                    Unpaid
+                                </label>
+                                <span id="unpaid"></span>
+                            </div>
+                        </div>
+
+                        <div id="hide_for_paid_stipend">
+                            <div class="stipend-content">
+                                <select id="salary_currency" class="stipend-chosen-select" name="salary_currency">
+                                    <option value="rs">₹</option>
+                                    <option value="dollar">$</option>
+                                    <option value="euro">€</option>
+                                    <option value="pound_sterling">£</option>
+                                    <option value="swiss_franc">CHF</option>
+                                    <option value="singapore_dollar">SGD</option>
+                                    <option value="yen">Yen</option>
+                                    <option value="nis">NIS</option>
+                                    <option value="jpy">¥</option>
+                                    <option value="aed">AED</option>
+                                    <option value="lkr">LKR</option>
+                                </select>
+                            </div>
+                            <div class="stipend-content">
+                                <input id="salary2" class="stipend-chosen-select" name="package" value="" type="text"
+                                    placeholder="e.g. 12000">
+
+                            </div>
+
+                            <!-- <div class="stipend-content">
+                                <input id="salary3" class="stipend-chosen-select" name="salary2" value="" type="text"
+                                    placeholder=" to  e.g. 24000">
+
+                            </div> -->
+
+                            <div class="stipend-content">
+                                <select class="stipend-chosen-select" id="fixed_duration_value"
+                                    name="fixed_duration_value">
+                                    <option value="Week">Week</option>
+                                    <option value="Month">Month</option>
+                                    <option value="Year">Year</option>
+
+                                </select>
+                                <div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <section>
+
+
+                            <div class="perks">
+
+
+                                <div class="heading-perks">
+                                    <label>Perks <span class="label_hint">(Optional)</span> </label>
+                                    <div>
+                                        <div class="perks-checkbox">
+                                            <div class="perks-checkbox-data">
+                                                <input type="checkbox" name="certificate" id="certificate">
+                                                <label for="certificate">Certificate</label>
+                                            </div>
+                                            <div class="perks-checkbox-data">
+                                                <input type="checkbox" name="is_lor_provided" id="is_lor_provided">
+                                                <label for="is_lor_provided">Letter of recommendation</label>
+                                            </div>
+                                        </div>
+                                        <div class="perks-checkbox">
+                                            <div class="perks-checkbox-data">
+                                                <input type="checkbox" name="is_flexible_work_hours_allowed"
+                                                    id="is_flexible_work_hours_allowed">
+                                                <label for="is_flexible_work_hours_allowed">Flexible work hours</label>
+                                            </div>
+                                            <div class="perks-checkbox-data">
+                                                <input type="checkbox" name="is_five_days_a_week_allowed"
+                                                    id="is_five_days_a_week_allowed">
+                                                <label for="is_five_days_a_week_allowed">5 days a week</label>
+                                            </div>
+                                        </div>
+                                        <div class="perks-checkbox">
+                                            <div class="perks-checkbox-data">
+                                                <input class="regular_perk_checkbox" type="checkbox"
+                                                    name="is_informal_dress_code_allowed"
+                                                    id="is_informal_dress_code_allowed">
+                                                <label for="is_informal_dress_code_allowed">Informal dress code</label>
+                                            </div>
+                                            <div class="perks-checkbox-data">
+                                                <input class="regular_perk_checkbox" type="checkbox"
+                                                    name="is_snacks_allowed" id="is_snacks_allowed">
+                                                <label for="is_snacks_allowed">Free snacks &amp; beverages</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br><br><br><br>
+                                <div class="perks-question">
+                                    <input type="checkbox" class="is_ppo_internship" name="ppo_prospect"
+                                        id="is_ppo_internship" value="yes">
+                                    <label class="pre-placement-question">Does this internship come with a pre-placement
+                                        offer (PPO)? <span class="label_hint"
+                                            style="opacity: 0.7;">(Optional)</span></label>
+                                </div>
+
+                        </section>
+                    </div>
+            </section>
+            <br><br>
+            <section style="border:1px solid black; border-radius: 10px; padding: 10px;">
+
+                <div id="who_can_apply_section" style="display: block;">
+                    <h4>Skills &amp; assessment</h4>
+                    <div class="section internshala-form" id="">
+
+                        <div style="line-height: 50px;">
+                            <label for="category" class="control-label">Skills required <span class="label_hint"
+                                    style="opacity: 0.7;">(Optional)</span></label>
+                        </div>
+                        <div>
+                            <input class="" type="text" autocomplete="off" name="skill" placeholder="e.g. Java"
+                                style="width:90%; padding: 8px;">
+                        </div>
+                    </div>
+
+                    <div class="" id="internship_for_woman_checkbox" style="display: block; line-height: 40px;">
+                        <input type="checkbox" id="internship_for_woman" name="internship_for_woman">
+                        <!-- <label for="internship_for_woman"> -->
+                            <label for="internship_for_woman" style="display: inline">Allow applications from
+                                women also who are willing to start/restart their career.</label>
+                            <!-- <a href="" id="ifw_know_more" style="text-decoration: none; color: blue;">Know more</a> -->
+                        </label>
+                    </div>
+                    <div id="student_assessment_container">
+                        <label style="line-height: 50px;font-weight: 600;">Assessment</label>
+                        <div class="label_faded" style="opacity: .8;">
+                            Question 1 &amp; 2 will be asked to every applicant by default. If you wish, you may
+                            ask two more customized questions.
+                        </div>
+                        <p><span style="font-weight: 500">Question
+                                1</span>
+                            Why should you be hired for this role? </p>
+
+                        <p id="availability_question"><span style="font-weight: 500">Question 2</span>
+                            <span id="render_availability_question">Are you available for 1 month, starting
+                                immediately, for a full-time internship at Rajasthan? If not, what is the time
+                                period you are available for and the earliest date you can start this internship
+                                on?</span>
+                        </p>
+                       
+                    </div>
+                    <section class="add-another-question">
+                        <!-- <textarea name="odg1" rows="8" cols="50" title="Question 3"
+                            style="display:none;"></textarea><br /> -->
+                        <div id="inner"></div>
+                        <button type="button" name="addmore" onClick="addmores(); ">+ Add another question</button>
+                        <br /><br />
+
+                    </section>
+                    
+                   <script>
+                    am = 1;
+                    q = 3;
+                    function addmores() {
+                         var textarea1 = document.createElement("textarea");
+                        textarea1.name = "odg" + am;
+                        textarea1.id="add_textarea";
+                        textarea1.rows = 8;
+                        textarea1.cols = 25;
+                        textarea1.style.width="90%";
+                        textarea1.placeholder = "Type your Question " + q + " here";
+                        textarea1.style.padding = "20px";
+                        q++;
+                        var div = document.createElement("div");
+                        div.innerHTML = textarea1.outerHTML;
+                        document.getElementById("inner").appendChild(div);
+                        am++;
+            
+                    }
+                </script>
+                    <div class="btn-submit" style="margin-top: 7%;">
+                        <!-- <a href="main/myjob/"><button id="btn-1">My jobs</button></a> -->
+                        <button  type="submit" id ="btn-2"> Post Internship</button>
+        
+                    </div>
+
+
+
+            </section>
+             
+            
+
+            <!-- <div class="btn-submit" style="margin-top: 7%;">
+                <button id="btn-1">Save Draft</button>
+                <button id="btn-2"> Post Internship</button>
+
+            </div> -->
+            
+        </div>
+        </div>
+    </div>
+    </div>
+</form>
+</div>
+
+{% endblock body%}
+
+
+
+ 

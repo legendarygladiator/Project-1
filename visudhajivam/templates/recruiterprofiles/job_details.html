@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+
+
+
+{% block title %}Project|job_details{% endblock title %}
+
+{% block body %}
+
+<main>
+    <div class="my-3 fw-bold fs-1 text-center">{{mypost1.position}} in {{mypost1.location}} at {{mypost1.company}}</div>
+
+    <div class="container my-5">
+        <div class="row justify-content-evenly">
+            <div class="col-12 col-lg-10 border p-4">
+                <div class="h2">
+                    {{mypost1.position}}
+                </div>
+                <div class="h3 text-muted">{{mypost1.company}}</div>
+                <div class="my-4 lists fs-5">
+                    <ul>
+                        <div class="row justify-content-evenly">
+                            <li class="col-12 col-md-6 my-2">
+                                <span class="fa fa-play-circle theme-text-color-gold"></span><span> Start
+                                    date</span>
+                                <div class="text-muted ms-4">Immediately</div>
+                            </li>
+                            <li class="col-12 col-md-6 my-2">
+                                <span class="fa fa-inr theme-text-color-gold"></span><span> CTC</span>
+                                <div class="text-muted ms-4">{{mypost1.package}}</div>
+                            </li>
+                        </div>
+                        <div class="row justify-content-evenly my-md-3">
+                            <li class="col-12 col-md-6 my-2">
+                                <span class="fa fa-briefcase theme-text-color-gold"></span><span> Experience</span>
+                                <div class="text-muted ms-4">{{mypost1.experience}} year</div>
+                            </li>
+                            <li class="col-12 col-md-6 my-2">
+                                <span class="fa fa-location-arrow theme-text-color-gold"></span><span>
+                                    Location</span>
+                                <div class="text-muted ms-4">{{mypost1.location}}</div>
+                            </li>
+                        </div>
+                    </ul>
+                </div>
+                <span class="bg-light rounded-pill fs-5 my-5 p-1 px-3">Fresher Job</span>
+                <hr>
+                <div class="my-4">
+                    <div class="h5">About {{mypost1.company}}</div>
+                    <div class="ms-2">
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit blanditiis earum
+                            fugiat, facere rem magni. Cupiditate quasi reprehenderit placeat magnam, impedit modi
+                            voluptas debitis odit consectetur, beatae laborum architecto mollitia.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam cum dignissimos odio
+                            ut. Cumque voluptatibus in, laboriosam voluptate quaerat id alias laborum dolores,
+                            praesentium eligendi adipisci necessitatibus officia asperiores eos, inventore molestiae
+                            tempore nesciunt ex odit molestias provident? Voluptate, recusandae.</p>
+                    </div>
+                </div>
+                <div class="my-4">
+                    <div class="h5">Responsibilities</div>
+                    <div class="">
+                        <ol>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, distinctio.</li>
+                            <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga debitis unde nisi
+                                consequatur corrupti porro.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium nam temporibus
+                                deleniti quam iste quisquam, rem totam perspiciatis!</li>
+                            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos assumenda possimus
+                                eius ab nesciunt.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque tempora quisquam
+                                ratione, consequatur harum labore inventore, distinctio fugit asperiores quas rem
+                                cupiditate!</li>
+                            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique, perferendis ea
+                                obcaecati deserunt dicta iste ad amet eius corrupti cupiditate vel tempore
+                                provident, ab beatae.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et fuga odit facilis
+                                eligendi saepe voluptas ea voluptatum.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores maxime quisquam
+                                dolorum, commodi nam quasi molestiae beatae possimus voluptatum eaque iusto nobis
+                                quos cumque est.</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="my-4">
+                    <div class="h5 mb-3">Skill(s) required</div>
+                    <div>
+                        <div class="bg-light d-inline rounded-pill mx-2 p-1 px-3">{{mypost1.skill}}</div>
+                        <div class="bg-light d-inline rounded-pill mx-2 p-1 px-3">Java</div>
+                        <div class="bg-light d-inline rounded-pill mx-2 p-1 px-3">React</div>
+                        <div class="bg-light d-inline rounded-pill mx-2 p-1 px-3">{{mypost1.skill}}</div>
+                    </div>
+                </div>
+                <div class="my-4">
+                    <div class="h5 mb-3">Who can apply?</div>
+                    <div class="">
+                        <ol>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, distinctio.</li>
+                            <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga debitis unde nisi
+                                consequatur corrupti porro.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium nam temporibus
+                                deleniti quam iste quisquam, rem totam perspiciatis!</li>
+                            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos assumenda possimus
+                                eius ab nesciunt.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque tempora quisquam
+                                rationee, distinctio fugit asperiores quas rem cupiditate!</li>
+                            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique, perferendis ea
+                                obcaecati deserunt dicta iste vel tempore provident, ab beatae.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et fuga odit facilis.</li>
+
+                        </ol>
+                    </div>
+                </div>
+                <div class="my-4">
+                    <div class="h5 mb-3">Position(s) available</div>
+                    <div class="my-3 ms-4">{{mypost1.experience}}</div>
+                </div>
+                <div class="text-center">
+                    <div class="btn btn-dark">
+                      <a href="/{{mypost1.post_id}}/" class="text-decoration-none">  <div class="theme-text-color fs-5">Apply now!</div></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock body%}

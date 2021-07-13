@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}training{% endblock title %}
+{% block content%}<link rel="stylesheet" href="/static/css/fresher.css">{% endblock content %}
+{% block body %}
+
+
+<div id="jobs">
+    <div class="container">
+        <h3 class="mb-5"> <b>My Applicants</b></h3>
+<div class="company-details ">
+    {% for i in info %}
+    <div class="job-update">
+        <h4><b>{{i.users}}</b></h4>
+        <p>{{i.institution}}</p>
+        <i class="fas fa-briefcase-medical"></i><span>{{i.qualification}}</span><br>
+        <i class="fas fa-rupee-sign"></i><span>{{i.first_name}}</span><br>
+        <i class="fas fa-map-marker-alt"></i><span>{{i.state}}</span>
+        <p>Skills <i class="fas fa-angle-double-right"></i><small>{{i.skills}}</small>,<small>Python</small>,<small>HTML,CSS</small>,<small>.Net</small></p>
+       <p>location<i class="fas fa-angle-double-right"></i>{{i.address}}</p>
+       <p>Email<i class="fas fa-angle-double-right"></i>{{i.email}}</p>
+    </div>
+    <br>
+    <div class="apply-btn">
+        <a href="mailto:{{i.email}}"><button type="button" class="btn btn-primary"> Contact </button></a>
+    </div>
+    {% endfor %}
+</div>
+</div>
+</div>>
+{% endblock body %}
